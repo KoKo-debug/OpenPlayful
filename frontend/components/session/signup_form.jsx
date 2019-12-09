@@ -38,6 +38,7 @@ class SignupForm extends React.Component {
                  value={this.state.lastName}
                  onChange={this.update("lastName")}
           />
+          <button>Create Account</button>
         </form>
       </div>
     )
