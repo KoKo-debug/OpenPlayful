@@ -19,10 +19,9 @@ ActiveRecord::Schema.define(version: 2019_12_09_164208) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "email", null: false
-    t.integer "primary_location", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.integer "location_id"
+    t.integer "location_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
