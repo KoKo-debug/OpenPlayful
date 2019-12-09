@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import {signup } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import SessionForm from './signup_form';
 
 
 const msp = (state) => ({
-  errors: state.errors.session,
+  errors: state.errors
 });
 
 const mdp = dispatch => ({
