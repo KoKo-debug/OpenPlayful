@@ -1,18 +1,61 @@
 import React from 'react';
+import { merge } from 'lodash';
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: "",
-      password1: "",
+      password: "",
       password2: "",
-      location: ""
+      location_id: 0
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.passwordCheck = this.passwordCheck.bind(this);
+    // this.dynamicPasswordCheck = this.dynamicPasswordCheck.bind(this);
   }
 
+
+  passwordCheck() {
+    const {password, password2} = this.state;
+    let msg1 = document.getElementById("pass-error");
+    let msg2 = document.getElementById("pass2-error");
+    const redColor = "#ff0000";
+    if (password.length < 8 && password.length !== 0) {
+      msg1.style.color = redColor;
+      msg1.innerHTML = "Passwords must be 8 characters or more.";
+    } else {
+      msg1.innerHTML ="";
+    }
+
+    if (password2 !== "" && password !== password2) {
+      msg2.style.color = redColor;
+      msg2.innerHTML = "Passwords do not match";
+    } else {
+      msg2.innerHTML = "";
+    }
+  }
+
+  //not working, pass is never turning true.
+  // dynamicPasswordCheck() {
+  //   let pass = false;
+  //   const {password, password2} = this.state;
+  //   if (password.length > 7 || pass) {
+  //     pass = true;
+  //   }
+  //   debugger
+  //   if (pass) {
+  //     if (password.length < 8) {
+  //       msg1.style.color = redColor;
+  //       msg1.innerHTML = "Passwords must be 8 characters or more.";
+  //     } else {
+  //       msg1.innerHTML = "";
+  //     }
+  //   }
+  // }
   
   update(field) {
     return e => this.setState({
@@ -22,30 +65,69 @@ class SignupForm extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    const user = merge({}, this.state);
+    delete user.password2;
     this.props.submitForm(user);
   }
   
-  renderErrors() {
+  componentDidMount() {
+    this.props.fetchLocations();
+  }
 
+
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
   }
 
 
   render() {
-
+    const { locations } = this.props;
+    let locationLis = locations.map(location => <option value={location.id} key={location.id}>{location.name}</option>);
     return(
-      <div className="Signup">
+      <div className="Signup-form-container">
         <header>Welcome to OpenTable!</header>
         
         <form onSubmit={this.handleSubmit} className="signup-form-box">
           <input type="text" 
-                 value={this.state.firstName} 
-                 onChange={this.update("firstName")}
+                 placeholder="First Name *"
+                 onChange={this.update("first_name")}
           />
           <input type="text"
-                 value={this.state.lastName}
-                 onChange={this.update("lastName")}
+                 placeholder="Last Name *"
+                 onChange={this.update("last_name")}
           />
+          <input type="email"
+                 placeholder="Enter email *"
+                 onChange={this.update("email")}
+          />
+          <input type="password"
+                 placeholder="Enter passwrord *"
+                 onChange={this.update("password")}
+                //  onChange={this.dynamicPasswordCheck}
+                 onBlur={this.passwordCheck}
+                 id="password"
+          />
+          <div id="pass-error"></div>
+          <input type="password"
+                 placeholder="Re-enter password *"
+                 onChange={this.update("password2")}
+                 onBlur={this.passwordCheck}
+                 id="password2"
+          />
+          <div id="pass2-error"></div>
+          <select id="location" onChange={this.update("location_id")}>
+            <option value="None">Primary Dining Location *</option>
+            {locationLis}
+          </select>
           <button>Create Account</button>
         </form>
       </div>

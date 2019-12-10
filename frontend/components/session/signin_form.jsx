@@ -1,12 +1,12 @@
 import React from 'react';
-
+import { merge } from 'lodash';
 
 class SigninForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      Password: ""
+      password: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +21,7 @@ class SigninForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    const user = merge({}, this.state);
     this.props.submitForm(user);
   }
 
@@ -35,14 +35,12 @@ class SigninForm extends React.Component {
           <header>Please sign in</header>
           
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <input type="text"
-                   value="email"
-                   onFocus="if (this.value=='email') this.value=='';"
-                  //  value={this.state.email}
+            <input type="email"
+                   placeholder="email"
                    onChange={this.update("email")}
             />
             <input type="password"
-                   value={this.state.password}
+                   placeholder="password"
                    onChange={this.update("password")}
             />
             <button>Sign In</button>
