@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  protect_from_forgery with: :exception
 
   def signin(user)
     session[:session_token] = user.reset_session_token!

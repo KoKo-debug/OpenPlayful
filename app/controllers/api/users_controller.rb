@@ -1,5 +1,7 @@
+
 class Api::UsersController < ApplicationController
-  
+  protect_from_forgery except: :create
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -12,7 +14,7 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:irst_name, :last_name, :email, :password, :location_id)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :location_id)
   end
 
 end
