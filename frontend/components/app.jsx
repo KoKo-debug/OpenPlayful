@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFromContainer from './session/signup_form_container';
+import SignInFormContainer from './session/signin_form_container';
 
 const App = () => (
   <div>
@@ -11,6 +12,7 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Route path="/signup" component={SignUpFromContainer} />
+    <Route path="/signin" component={SignInFormContainer} />
   </div>
 
 );
