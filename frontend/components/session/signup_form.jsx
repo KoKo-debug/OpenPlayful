@@ -94,7 +94,7 @@ class SignupForm extends React.Component {
     let locationLis = locations.map(location => <option value={location.id} key={location.id}>{location.name}</option>);
     return(
       <div className="signup-form-container">
-        <header>Welcome to OpenTable!</header>
+        <header className="form-header">Welcome to OpenTable!</header>
         
         <form onSubmit={this.handleSubmit} className="signup-form-box">
           <input type="text" 
@@ -128,7 +128,7 @@ class SignupForm extends React.Component {
             <option value="None">Primary Dining Location *</option>
             {locationLis}
           </select>
-          <button className ="create-account">Create Account</button>
+          <button className ="create-account-button">Create Account</button>
         </form>
       </div>
     )

@@ -4,12 +4,14 @@
     <title>OpenPlayful</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Overpass&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= image_tag("OpenPlayful.png", class: "logo") %>
   </head>
 
   <body>
+ 
     <%= yield %>
   </body>
 </html>

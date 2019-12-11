@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 
@@ -30,13 +30,14 @@
 
 .signin-form-container header {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  left: -20px;
   
 }
 
 .signup-form-container header {
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .signin-form-box {
@@ -52,39 +53,70 @@
 }
 
 input[type="text"] {
+  padding: 0px 15px;
   width: 250px;
   height: 30px;
   margin: 5px;
 }
 
 input[type="email"] {
+  padding: 0px 15px;
   width: 250px;
   height: 30px;
   margin: 5px;
 }
 
 input[type="password"] {
+  padding: 0px 15px;
   width: 250px;
   height: 30px;
   margin: 5px;
 }
 
 #location {
-  width: 250px;
-  height: 30px;
+  width: 285px;
+  height: 35px;
   margin: 5px;
-}
-
-.create-account {
-  background-color: #e0323e;
-  width: 250px;
-  height: 30px;
-  margin: 20px 0px 0px 0px;
+  border: 1px solid rgb(197, 197, 197);
 }
 
 .signin-button {
+  margin-left: 5px;
+  color: white;
   background-color: #e0323e;
-  width: 250px;
-  height: 30px;
+  width: 290px;
+  height: 35px;
   margin: 20px 0px 0px 0px;
+  border-color: #e0323e;
+  border-radius: 2px;
 }
+
+.create-account-button {
+  margin-left: 5px;
+  color: white;
+  background-color: #e0323e;
+  width: 290px;
+  height: 35px;
+  margin: 20px 0px 0px 0px;
+  border-color: #e0323e;
+  border-radius: 2px;
+}
+
+.form-header {
+  font-family: 'Overpass', sans-serif;
+  display: none;
+  width: auto;
+  margin: 0px 10px;
+  border-bottom: 1px solid rgb(181, 181, 181);
+}
+
+#pass-error {
+  margin-left: 7px;
+  font-size: 10px;
+}
+
+#pass2-error {
+  margin-left: 7px;
+  font-size: 10px;
+}
+
