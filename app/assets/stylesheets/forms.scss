@@ -1,0 +1,90 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+.signup-form-container {
+
+  padding: 20px 16px;
+
+}
+
+.signin-form-container {
+
+  padding: 20px 16px;
+
+}
+
+.signin-form-container header {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.signup-form-container header {
+  display: flex;
+  justify-content: center;
+}
+
+.signin-form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input[type="text"] {
+  width: 250px;
+  height: 30px;
+  margin: 5px;
+}
+
+input[type="email"] {
+  width: 250px;
+  height: 30px;
+  margin: 5px;
+}
+
+input[type="password"] {
+  width: 250px;
+  height: 30px;
+  margin: 5px;
+}
+
+#location {
+  width: 250px;
+  height: 30px;
+  margin: 5px;
+}
+
+.create-account {
+  background-color: #e0323e;
+  width: 250px;
+  height: 30px;
+  margin: 20px 0px 0px 0px;
+}
+
+.signin-button {
+  background-color: #e0323e;
+  width: 250px;
+  height: 30px;
+  margin: 20px 0px 0px 0px;
+}

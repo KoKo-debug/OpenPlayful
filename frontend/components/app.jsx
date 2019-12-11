@@ -1,16 +1,21 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFromContainer from './session/signup_form_container';
-
+import SignInFormContainer from './session/signin_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Modal from './modal/modal_container';
 const App = () => (
   <div>
-    <header>
-      <h1>Open playfulll</h1>
+    <Modal />
+    <header className="bar">
+      <h1>OpenPlayful</h1>
       <GreetingContainer />
     </header>
-    <Route path="/signup" component={SignUpFromContainer} />
+    {/* <AuthRoute path="/signup" component={SignUpFromContainer} />
+    <AuthRoute path="/signin" component={SignInFormContainer} /> */}
   </div>
 
 );
