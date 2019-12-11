@@ -1,4 +1,3 @@
-require "byebug"
 class ApplicationController < ActionController::Base
   # protect_from_ forgery with: :null_session
   helper_method :current_user, :logged_in?
