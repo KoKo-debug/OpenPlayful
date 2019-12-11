@@ -1,12 +1,11 @@
 require "byebug"
 class Api::SessionsController < ApplicationController
-  protect_from_forgery except: :create
+  skip_before_action :verify_authenticity_token
   def show
     
   end
 
   def create
-    debugger
       @user = User.find_by_credentials(
         params[:user][:email], 
         params[:user][:password]
@@ -14,7 +13,6 @@ class Api::SessionsController < ApplicationController
       
       if @user
         signin(@user)
-        debugger;
         render "api/users/show"
       else
         render json: ["Your email and password don't match. Please try again"], status: 401

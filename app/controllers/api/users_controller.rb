@@ -1,7 +1,7 @@
 
 class Api::UsersController < ApplicationController
-  protect_from_forgery except: :create
-
+  #verify auth token is a nightmare. i can't get it to work with it.
+  skip_before_action :verify_authenticity_token
   def create
     @user = User.new(user_params)
     if @user.save

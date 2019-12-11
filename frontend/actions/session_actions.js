@@ -5,7 +5,6 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 export const receiveCurrentUser = currentUser => {
-  debugger;
   return ({
     type: RECEIVE_CURRENT_USER,
     currentUser,
@@ -23,18 +22,15 @@ export const receiveErrors = errors => ({
 
 
 export const signup = user => dispatch => (
-  APIUtil.signup(user)
-    .then(user => dispatch(receiveCurrentUser(user)))
+  APIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)))
 ); 
 
 export const signin = user => dispatch => (
-  APIUtil.signin(user)
-    .then(user => console.log(user),
-      dispatch(receiveCurrentUser(user)))
+  APIUtil.signin(user).then(user => dispatch(receiveCurrentUser(user)))
 );
 
 export const logout = () => dispatch => (
-  APIUTil.logout().then(() => dispatch(logoutCurrentUser()))
+  APIUtil.logout().then(() => dispatch(logoutCurrentUser()))
 );
 
 //// check .then(user => dispatch....)
