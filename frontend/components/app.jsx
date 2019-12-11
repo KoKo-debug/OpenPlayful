@@ -11,7 +11,7 @@ const App = () => (
   <div>
     <Modal />
     <header className="bar">
-      <h1>OpenPlayful</h1>
+      <h1 className="title">OpenPlayful</h1>
       <GreetingContainer />
     </header>
     {/* <AuthRoute path="/signup" component={SignUpFromContainer} />

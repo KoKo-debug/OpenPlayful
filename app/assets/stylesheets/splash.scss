@@ -1,7 +1,22 @@
+
 .bar {
   display: flex;
   justify-content: space-between;
   margin: 20px 50px;
+  background-color: white;
+  padding: 10px;
+}
+
+.logo {
+  display: block;
+  width: 5px;
+  height: 5px;
+
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 650;
 }
 
 .sign-in-button {

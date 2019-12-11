@@ -32,15 +32,15 @@ class SigninForm extends React.Component {
   render() {
     return(
       <div className="signin-form-container">
-          <header>Please sign in</header>
+          <header class="form-header">Please sign in</header>
           
           <form onSubmit={this.handleSubmit} className="signin-form-box">
             <input type="email"
-                   placeholder="email"
+                   placeholder="Email"
                    onChange={this.update("email")}
             />
             <input type="password"
-                   placeholder="password"
+                   placeholder="Password"
                    onChange={this.update("password")}
             />
             <button className="signin-button">Sign In</button>
