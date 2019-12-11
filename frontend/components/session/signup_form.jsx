@@ -10,12 +10,14 @@ class SignupForm extends React.Component {
       email: "",
       password: "",
       password2: "",
-      location_id: 0
+      location_id: 0,
+      pass: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.passwordCheck = this.passwordCheck.bind(this);
-    // this.dynamicPasswordCheck = this.dynamicPasswordCheck.bind(this);
+    this.dynamicPasswordCheck = this.dynamicPasswordCheck.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
 
@@ -39,23 +41,22 @@ class SignupForm extends React.Component {
     }
   }
 
+
   //not working, pass is never turning true.
-  // dynamicPasswordCheck() {
-  //   let pass = false;
-  //   const {password, password2} = this.state;
-  //   if (password.length > 7 || pass) {
-  //     pass = true;
-  //   }
-  //   debugger
-  //   if (pass) {
-  //     if (password.length < 8) {
-  //       msg1.style.color = redColor;
-  //       msg1.innerHTML = "Passwords must be 8 characters or more.";
-  //     } else {
-  //       msg1.innerHTML = "";
-  //     }
-  //   }
-  // }
+  dynamicPasswordCheck() {
+    let msg1 = document.getElementById("pass-error");
+    if (this.state.password.length > 7 || this.state.pass) {
+      if (this.state === false) this.setState({pass: true});
+    }
+    if (this.state.pass) {
+      if (password.length < 8) {
+        msg1.style.color = redColor;
+        msg1.innerHTML = "Passwords must be 8 characters or more.";
+      } else {
+        msg1.innerHTML = "";
+      }
+    }
+  }
   
   update(field) {
     return e => this.setState({
@@ -65,9 +66,12 @@ class SignupForm extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
+    let msg1 = document.getElementById("pass-error");
+    let msg2 = document.getElementById("pass2-error");
     const user = merge({}, this.state);
     delete user.password2;
-    this.props.submitForm(user);
+    if (msg1 === "" & msg2 === "" ) {
+    } this.props.submitForm(user).then(this.props.closeModal());
   }
   
   componentDidMount() {
@@ -95,7 +99,9 @@ class SignupForm extends React.Component {
     return(
       <div className="signup-form-container">
         <header className="form-header">Welcome to OpenTable!</header>
-        
+          <ul>
+            {this.renderErrors()}
+          </ul>
         <form onSubmit={this.handleSubmit} className="signup-form-box">
           <input type="text" 
                  placeholder="First Name *"
@@ -110,8 +116,9 @@ class SignupForm extends React.Component {
                  onChange={this.update("email")}
           />
           <input type="password"
-                 placeholder="Enter passwrord *"
+                 placeholder="Enter password *"
                  onChange={this.update("password")}
+                 onInput={this.dynamicPasswordCheck()}
                 //  onChange={this.dynamicPasswordCheck}
                  onBlur={this.passwordCheck}
                  id="password"
