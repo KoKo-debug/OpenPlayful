@@ -6,15 +6,16 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFromContainer from './session/signup_form_container';
 import SignInFormContainer from './session/signin_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
+import Modal from './modal/modal';
 const App = () => (
   <div>
+    <Modal />
     <header>
       <h1>Open playful</h1>
       <GreetingContainer />
     </header>
-    <AuthRoute path="/signup" component={SignUpFromContainer} />
-    <AuthRoute path="/signin" component={SignInFormContainer} />
+    {/* <AuthRoute path="/signup" component={SignUpFromContainer} />
+    <AuthRoute path="/signin" component={SignInFormContainer} /> */}
   </div>
 
 );
