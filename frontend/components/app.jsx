@@ -10,8 +10,8 @@ import Modal from './modal/modal_container';
 const App = () => (
   <div>
     <Modal />
-    <header>
-      <h1>Open playful</h1>
+    <header className="bar">
+      <h1>OpenPlayful</h1>
       <GreetingContainer />
     </header>
     {/* <AuthRoute path="/signup" component={SignUpFromContainer} />
