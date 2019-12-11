@@ -6,7 +6,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFromContainer from './session/signup_form_container';
 import SignInFormContainer from './session/signin_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Modal from './modal/modal';
+import Modal from './modal/modal_container';
 const App = () => (
   <div>
     <Modal />
