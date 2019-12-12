@@ -1,23 +1,13 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
-
-import GreetingContainer from './greeting/greeting_container';
-import SignUpFromContainer from './session/signup_form_container';
-import SignInFormContainer from './session/signin_form_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import TopBar from './topbar/topbar';
 import Modal from './modal/modal_container';
-const App = () => (
-  <div>
-    <Modal />
-    <header className="bar">
-      <h1 className="title">OpenPlayful</h1>
-      <GreetingContainer />
-    </header>
-    {/* <AuthRoute path="/signup" component={SignUpFromContainer} />
-    <AuthRoute path="/signin" component={SignInFormContainer} /> */}
-  </div>
 
+const App = () => (
+    <header className="page">
+      <Modal />
+      <TopBar />
+    </header>
 );
 
 export default App;

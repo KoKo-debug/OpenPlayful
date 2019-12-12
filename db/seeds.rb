@@ -37,3 +37,12 @@ user1 = User.create!(
   password: "hunter22",
   location_id: 1
 )
+
+demo = User.create!(
+  first_name: "John",
+  last_name: "Doe",
+  email: "demo@gmail.com",
+  password: "demopass",
+  location_id: 3
+)
+

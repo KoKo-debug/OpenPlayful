@@ -40,6 +40,19 @@ class SignupForm extends React.Component {
     }
   }
 
+  //can't do it
+
+  locationCheck() {
+    const { location_id } = this.state;
+    let msg3 = document.getElementById("location-error");
+    const redColor = "#ff0000";
+    if (location_id === "") {
+      msg3.style.color = redColor;
+      msg3.innerHTML = "Select a dining city";
+    } else {
+      msg3.innerHTML = "";
+    }
+  }
 
   //not working, pass is never turning true.
   dynamicPasswordCheck() {
@@ -97,10 +110,14 @@ class SignupForm extends React.Component {
     let locationLis = locations.map(location => <option value={location.id} key={location.id}>{location.name}</option>);
     return(
       <div className="signup-form-container">
-        <header className="form-header">Welcome to OpenTable!</header>
-          <ul>
-            {this.renderErrors()}
-          </ul>
+        <header className="form-header">
+          Welcome to OpenPlayful!
+        </header>
+        
+        <ul>
+          {this.renderErrors()}
+        </ul>
+
         <form onSubmit={this.handleSubmit} className="signup-form-box">
           <input type="text" 
                  placeholder="First Name *"
@@ -130,11 +147,16 @@ class SignupForm extends React.Component {
                  id="password2"
           />
           <div id="pass2-error"></div>
-          <select id="location" onChange={this.update("location_id")}>
-            <option value="None">Primary Dining Location *</option>
+          <select id="location" defaultValue="" onChange={this.update("location_id")}>
+            <option selected disabled>Primary Dining Location *</option>
             {locationLis}
           </select>
+          <div id="location-error"></div>
           <button className ="create-account-button">Create Account</button>
+          <span id="dontWantForm">Don't want to complete the form?</span>
+          <button id="demo-signin" onClick={this.demoSignin}>
+            Sign in as demo user
+          </button>
         </form>
       </div>
     )

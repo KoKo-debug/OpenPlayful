@@ -16,23 +16,36 @@
   background-color: white;
 }
 
-.signup-form-container {
+.close-x {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 100;
+  position: absolute;
+  color: gray;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
 
+.signup-form-container {
+  width: 280px;
+  padding: 20px 16px;
+  margin: auto;
+}
+
+.signin-form-container {
+  width: 280px;
   padding: 20px 16px;
 
 }
 
-.signin-form-container {
-
-  padding: 20px 16px;
-
+.signin-form-container button {
+  display: flex;
+  justify-content: center;
 }
 
 .signin-form-container header {
   display: flex;
   justify-content: left;
-  left: -20px;
-  
 }
 
 .signup-form-container header {
@@ -54,60 +67,118 @@
 
 input[type="text"] {
   padding: 0px 15px;
-  width: 250px;
+  width: 85%;
   height: 30px;
   margin: 5px;
 }
 
 input[type="email"] {
   padding: 0px 15px;
-  width: 250px;
+  width: 85%;
   height: 30px;
   margin: 5px;
 }
 
 input[type="password"] {
   padding: 0px 15px;
-  width: 250px;
+  width: 85%;
   height: 30px;
   margin: 5px;
 }
 
 #location {
-  width: 285px;
+  width: 97%;
   height: 35px;
   margin: 5px;
   border: 1px solid rgb(197, 197, 197);
 }
 
+#location:after {
+  content: "<>";
+    -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+}
+
+select option[disabled]:first-child {display: none;}
+
 .signin-button {
   margin-left: 5px;
   color: white;
   background-color: #e0323e;
-  width: 290px;
+  width: 97%;
   height: 35px;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 5px;
   border-color: #e0323e;
   border-radius: 2px;
 }
 
-.create-account-button {
+#dontWantForm {
+  border-top: 1px solid lightgray;
+  padding-top: 15px;
+  margin-top: 15px;
   margin-left: 5px;
+  font-size: 10px;
+  font-weight: 200;
+  width: 97%;
+}
+
+#demo-signin {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: lightcoral;
+  border-color: lightcoral;
+  margin-top: 3px;
+  margin-left: 5px;
+  border-radius: 2px;
+  padding: 5px 0px;
+  width: 97%;
+}
+
+.newToContainer {
+  display: flex;
+  margin-top: 15px;
+}
+
+.newToContainer span{
+  margin-left: 5px;
+  font-size: 10px;
+  font-weight: 300;
+  width: 35%;
+}
+
+.newToContainer button {
+  font-size: 10px;
+  width: 30%;
+  border: none;
+  background-color: white;
+  color: rgb(228, 114, 114);
+
+}
+
+.create-account-button {
+  justify-content: center;
   color: white;
   background-color: #e0323e;
-  width: 290px;
+  width: 97%;
   height: 35px;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 5px;
   border-color: #e0323e;
   border-radius: 2px;
+  padding-left: 3px;
 }
 
 .form-header {
   font-family: 'Overpass', sans-serif;
   display: none;
-  width: auto;
-  margin: 0px 10px;
-  border-bottom: 1px solid rgb(181, 181, 181);
+  width: 97%;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
 }
 
 #pass-error {
