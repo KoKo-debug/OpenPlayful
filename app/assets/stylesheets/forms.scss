@@ -105,7 +105,11 @@ input[type="password"] {
   margin: 10px 0px;
   border: 1px solid rgb(197, 197, 197);
   border-radius: 1px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   box-shadow: none;
+
 }
 
 #location:after {
