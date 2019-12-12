@@ -193,11 +193,15 @@ select option[disabled]:first-child {display: none;}
 
 #pass-error {
   margin-left: 7px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 #pass2-error {
   margin-left: 7px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
+.errors li{
+  list-style-type: none;
+  color: rgb(220, 48, 48);
+}
