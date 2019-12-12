@@ -27,14 +27,14 @@
 }
 
 .signup-form-container {
-  width: 280px;
-  padding: 20px 16px;
+  width: 400px;
+  padding: 40px 32px;
   margin: auto;
 }
 
 .signin-form-container {
-  width: 280px;
-  padding: 20px 16px;
+  width: 400px;
+  padding: 40px 32px;
 
 }
 
@@ -44,11 +44,15 @@
 }
 
 .signin-form-container header {
+  font-size: 20px;
+  font-weight: 900;
   display: flex;
   justify-content: left;
 }
 
 .signup-form-container header {
+  font-size: 20px;
+  font-weight: 900;
   display: flex;
   justify-content: left;
 }
@@ -67,30 +71,41 @@
 
 input[type="text"] {
   padding: 0px 15px;
-  width: 85%;
-  height: 30px;
-  margin: 5px;
+  width: 90%;
+  height: 45px;
+  margin: 10px 0px;
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 1px;
+  box-shadow: none;
 }
 
 input[type="email"] {
   padding: 0px 15px;
-  width: 85%;
-  height: 30px;
-  margin: 5px;
+  width: 90%;
+  height: 45px;
+  margin: 10px 0px;
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 1px;
+  box-shadow: none;
 }
 
 input[type="password"] {
   padding: 0px 15px;
-  width: 85%;
-  height: 30px;
-  margin: 5px;
+  width: 90%;
+  height: 45px;
+  margin: 10px 0px;
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 1px;
+  box-shadow: none;
 }
 
 #location {
-  width: 97%;
-  height: 35px;
-  margin: 5px;
+  width: 98%;
+  height: 47px;
+  margin: 10px 0px;
   border: 1px solid rgb(197, 197, 197);
+  border-radius: 1px;
+  box-shadow: none;
 }
 
 #location:after {
@@ -105,12 +120,11 @@ input[type="password"] {
 select option[disabled]:first-child {display: none;}
 
 .signin-button {
-  margin-left: 5px;
   color: white;
   background-color: #e0323e;
-  width: 97%;
+  width: 98%;
   height: 35px;
-  margin: 20px 0px 0px 5px;
+  margin-top: 20px;
   border-color: #e0323e;
   border-radius: 2px;
 }
@@ -118,9 +132,8 @@ select option[disabled]:first-child {display: none;}
 #dontWantForm {
   border-top: 1px solid lightgray;
   padding-top: 15px;
-  margin-top: 15px;
-  margin-left: 5px;
-  font-size: 10px;
+  margin-top: 20px;
+  font-size: 16px;
   font-weight: 200;
   width: 97%;
 }
@@ -132,10 +145,9 @@ select option[disabled]:first-child {display: none;}
   background-color: lightcoral;
   border-color: lightcoral;
   margin-top: 3px;
-  margin-left: 5px;
   border-radius: 2px;
   padding: 5px 0px;
-  width: 97%;
+  width: 98.5%;
 }
 
 .newToContainer {
@@ -144,15 +156,14 @@ select option[disabled]:first-child {display: none;}
 }
 
 .newToContainer span{
-  margin-left: 5px;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 300;
-  width: 35%;
+  width: 40%;
 }
 
 .newToContainer button {
-  font-size: 10px;
-  width: 30%;
+  font-size: 16px;
+  width: 40%;
   border: none;
   background-color: white;
   color: rgb(228, 114, 114);
@@ -163,9 +174,9 @@ select option[disabled]:first-child {display: none;}
   justify-content: center;
   color: white;
   background-color: #e0323e;
-  width: 97%;
+  width: 98%;
   height: 35px;
-  margin: 20px 0px 0px 5px;
+  margin-top: 20px;
   border-color: #e0323e;
   border-radius: 2px;
   padding-left: 3px;
@@ -175,7 +186,6 @@ select option[disabled]:first-child {display: none;}
   font-family: 'Overpass', sans-serif;
   display: none;
   width: 97%;
-  margin-left: 5px;
   margin-bottom: 5px;
   padding-bottom: 5px;
   border-bottom: 1px solid lightgray;
