@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PersonalGreetings from './current_user';
 
 const Greeting = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
@@ -8,11 +9,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
       <button className="sign-in-button" onClick={() => openModal("signin")}>Sign in</button>
     </nav>
   );
+
   const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2>Hi, {currentUser.first_name}</h2>
-      <button className="header-button" onClick={logout}>Sign out</button>
-    </hgroup>
+    <PersonalGreetings currentUser={currentUser} logout={logout} openModal={openModal}/>
   );
 
   return currentUser ? personalGreeting() : sessionLinks();

@@ -7,6 +7,7 @@
   padding: 5px;
   width: 1595px;
   height: 50px;
+  z-index: 2;
 }
 
 #logo {
@@ -16,6 +17,10 @@
 
 }
 
+.header-group {
+  display: flex;
+}
+  
 .sign-in-button {
   font-weight: 1;
   border: none;
@@ -35,3 +40,120 @@
   padding: 8px 12px;
 
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  // float: left;
+  // overflow: hidden;
+}
+
+.dropdown .drop-button {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.dropdown .drop-content {
+  display: none;
+  position: absolute;
+  box-shadow: none;
+  width: 230px;
+  height: 120px;
+  top:15px;
+  right: 10px;
+  z-index: 4;
+  background: white;
+  justify-content: left;
+  flex-direction: column;
+  border: 1px solid rgb(227, 224, 224);
+
+}
+
+.dropdown .show {
+  display: block;
+  background: white;
+}
+
+.dropdown .signout-button {
+  display: block;
+}
+
+.hi-user {
+  display: flex;
+  margin-right: 5px;
+}
+
+.dropdown {
+  margin-right: 40px;
+}
+
+#letterV {
+  width: 16px;
+  height: 16px;
+}
+
+.profile-button {
+  display: flex;
+  width: 60%;
+  height: 30px;
+  background: none;
+  border: none;
+  color: gray;
+}
+.history-button {
+  display: flex;
+  width: 60%;
+  height: 30px;
+  background: none;
+  border: none;
+  color: gray;
+}
+.saved-button {
+  display: flex;
+  width: 80%;
+  height: 30px;
+  background: none;
+  border: none;
+  color: gray;
+}
+.signout-button {
+  display: flex;
+  width: 26%;
+  height: 30px;
+  background: none;
+  border: none;
+  color: gray;
+}
+
+.notch-container {
+  display: none;
+  position: relative;
+}
+
+.notch {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  z-index: 5;
+  left: -95px;
+  top: 6px;
+}
+
+.outer-notch {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom:15px solid rgb(227, 224, 224);
+  left: -100px;
+  top: 4px;
+  z-index: 3;
+}
+
+// rgb(227, 224, 224)
