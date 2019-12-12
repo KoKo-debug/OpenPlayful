@@ -20,7 +20,6 @@ class SignupForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-
   passwordCheck() {
     const {password, password2} = this.state;
     let msg1 = document.getElementById("pass-error");
@@ -71,7 +70,7 @@ class SignupForm extends React.Component {
     const user = merge({}, this.state);
     delete user.password2;
     if (msg1 === "" & msg2 === "" ) {
-    } this.props.submitForm(user).then(this.props.closeModal());
+    } this.props.submitForm(user).then(user => this.props.closeModal());
   }
   
   componentDidMount() {

@@ -10,6 +10,7 @@ class SigninForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSignin = this.demoSignin.bind(this);
   }
 
 
@@ -26,7 +27,26 @@ class SigninForm extends React.Component {
   }
 
   renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
+  demoSignin(e) {
+    e.preventDefault();
+    if (e.target.id === "demo-singin") {
+      let user = {
+        emails: "demo@gmail.com",
+        password: "demopass"
+      }
+      this.props.submitForm(user).then(user => this.props.closeModal())
+    }
   }
 
   otherModalFunc() {
@@ -38,7 +58,7 @@ class SigninForm extends React.Component {
     return(
       <div className="signin-form-container">
           <header className="form-header">Please sign in</header>
-          
+          {this.renderErrors()}
           <form onSubmit={this.handleSubmit} className="signin-form-box">
             <input type="email"
                    placeholder="Email"
@@ -49,6 +69,9 @@ class SigninForm extends React.Component {
                    onChange={this.update("password")}
             />
             <button className="signin-button">Sign In</button>
+            <button id="demo-signin" onClick={this.demoSignin}>
+              Sign in as demo user
+            </button>
             <h1>New to OpenTable?</h1>
             <button onClick={() => this.otherModalFunc()}>Create an account</button>
           </form>

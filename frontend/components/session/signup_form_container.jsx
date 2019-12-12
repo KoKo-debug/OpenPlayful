@@ -8,7 +8,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
   return {
-  errors: state.errors.sessionErrorsReducer,
+  errors: state.errors.session,
   locations: Object.values(state.locations),
 };
 };
