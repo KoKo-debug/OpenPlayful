@@ -5,9 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Overpass&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= image_tag("OpenPlayful.png", class: "logo") %>
+    <script id="bootstrap-current-user" type="text/javascript">
+      <% if logged_in? %>
+  	    window.currentUser = <%= render("api/users/show.json.jbuilder", user: current_user).html_safe %>
+      <% end %>
+    </script>
+    <script type="text/javascript">
+      window.logo = "<%= image_url("LogoTitle.png") %>";
+      window.logoWhite = "<%= image_url("logoWhite.png") %>";
+    </script>
   </head>
 
   <body>

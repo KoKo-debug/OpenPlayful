@@ -40,9 +40,9 @@ class SigninForm extends React.Component {
 
   demoSignin(e) {
     e.preventDefault();
-    if (e.target.id === "demo-singin") {
+    if (e.target.id === "demo-signin") {
       let user = {
-        emails: "demo@gmail.com",
+        email: "demo@gmail.com",
         password: "demopass"
       }
       this.props.submitForm(user).then(user => this.props.closeModal())
@@ -69,11 +69,14 @@ class SigninForm extends React.Component {
                    onChange={this.update("password")}
             />
             <button className="signin-button">Sign In</button>
+            <span id="dontWantForm">Don't want to complete the form?</span>
             <button id="demo-signin" onClick={this.demoSignin}>
               Sign in as demo user
             </button>
-            <h1>New to OpenTable?</h1>
-            <button onClick={() => this.otherModalFunc()}>Create an account</button>
+            <div className="newToContainer">
+            <span id="newToPlay">New to OpenPlayful?</span>
+            <button id="newToButton" onClick={() => this.otherModalFunc()}>Create an account</button>
+            </div>
           </form>
       </div>
     )

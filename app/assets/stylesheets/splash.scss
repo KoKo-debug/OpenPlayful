@@ -1,34 +1,5 @@
 
-.bar {
+.page {
   display: flex;
-  justify-content: space-between;
-  margin: 20px 50px;
-  background-color: white;
-  padding: 10px;
-}
-
-.logo {
-  display: block;
-  width: 5px;
-  height: 5px;
-
-}
-
-.title {
-  font-size: 12px;
-  font-weight: 650;
-}
-
-.sign-in-button {
-  font-weight: 1;
-  border: none;
-}
-
-.signup-button {
-  font-weight: 1;
-  font-size: 10px;
-  color: white;
-  background-color: #6db4cb;
-  border-color: #6db4cb;
-  border-radius: 3px;
+  justify-content: center;
 }
