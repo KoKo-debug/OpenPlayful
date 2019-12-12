@@ -114,7 +114,7 @@ class SignupForm extends React.Component {
           Welcome to OpenPlayful!
         </header>
         
-        <ul>
+        <ul className="errors">
           {this.renderErrors()}
         </ul>
 

@@ -58,7 +58,9 @@ class SigninForm extends React.Component {
     return(
       <div className="signin-form-container">
           <header className="form-header">Please sign in</header>
-          {this.renderErrors()}
+          <ul className="errors">
+            {this.renderErrors()}
+          </ul>
           <form onSubmit={this.handleSubmit} className="signin-form-box">
             <input type="email"
                    placeholder="Email"
