@@ -4,7 +4,9 @@ import GreetingContainer from '../greeting/greeting_container';
 
 const TopBar = () => (
     <header className="navBar">
-      <img id="logo" src={window.logoWhite} alt="logo"/>
+      <button className="logo-button">
+        <img id="logo" src={window.logoWhite} alt="logo"/>
+      </button>
       <GreetingContainer />
     </header>
 );
