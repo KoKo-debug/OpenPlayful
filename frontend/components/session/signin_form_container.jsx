@@ -9,7 +9,7 @@ const msp = (state) => ({
 });
 
 const mdp = dispatch => ({
-  submitForm: (user) => dispatch(signin(user)),
+  signinForm: (user) => dispatch(signin(user)),
   otherModal: () => dispatch(openModal('signup')),
   // otherForm: (
   //   <button onClick={() => dispatch(openModal('signup'))}>

@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSignin = this.demoSignin.bind(this);
     this.passwordCheck = this.passwordCheck.bind(this);
     this.dynamicPasswordCheck = this.dynamicPasswordCheck.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -83,9 +84,22 @@ class SignupForm extends React.Component {
     const user = merge({}, this.state);
     delete user.password2;
     if (msg1 === "" & msg2 === "" ) {
-    } this.props.submitForm(user).then(user => this.props.closeModal());
+    } this.props.signupForm(user).then(user => this.props.closeModal());
   }
   
+  demoSignin(e) {
+    debugger;
+    e.preventDefault();
+    if (e.target.id === "demo-signin") {
+      let user = {
+        email: "demo@gmail.com",
+        password: "demopass"
+      };
+      this.props.signinForm(user).then(user => this.props.closeModal());
+
+    }
+  }
+
   componentDidMount() {
     this.props.fetchLocations();
   }
