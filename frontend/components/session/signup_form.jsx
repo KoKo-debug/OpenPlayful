@@ -88,7 +88,6 @@ class SignupForm extends React.Component {
   }
   
   demoSignin(e) {
-    debugger;
     e.preventDefault();
     if (e.target.id === "demo-signin") {
       let user = {
