@@ -4,22 +4,49 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      timeAMPM: ""
+    };
   }
 
-  times() {
-    const times = [];
-    for (let i = 1; i < 4; i++) {
+  populateTime() {
+    let times = [];
+    let hours, minutes, ampm;
+    for (let i = 0; i < 1440; i += 30) {
+      hours = Math.floor(i / 60);
+      minutes = i % 60;
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      ampm = hours % 24 < 12 ? "AM" : "PM";
+      hours = hours % 12;
+      if (hours === 0) {
+        hours = 12;
+      }
       times.push({
-        name: "10:30 AM"
+        time: hours + ":" + minutes + " " + ampm
+        // hours: hours,
+        // minutes: minutes,
+        // ampm: ampm
       });
     }
+    return times;
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
 
   render() {
-    // const { times } = this.props;
-    // let timeLis = times.map(time => 
-    //   <option value={time.name} key={time.id}>{time.name}</option>);
+    let timeLis = this.populateTime().map(time => 
+      <option value={time.time} key={time.time}>{time.time}</option>
+    );
+    
+    // fix this later as bonus
+    // let now = new Date()
+
     return(
       <div className="search-bar">
         <header className="search-header">
@@ -28,14 +55,10 @@ class SearchBar extends React.Component {
         <form className="searchForm">
           <input type="date" name="" id=""/>
           
-{/*           
-          <select id="time" onChange={this.update("")}>
-            <option selected >somehow selects 7pm</option>
+          <select id="time" defaultValue={this.state.timeAMPM} onChange={this.update("timeAMPM")}>
             {timeLis}
-          </select> */}
-        
-        
-        
+          </select>
+
         </form>
       </div>
 

@@ -55,9 +55,9 @@ class PersonalGreetings extends React.Component {
               <div className="notch"></div>
               <div className="outer-notch"></div>
               <div id="drop-items" className={ this.state.dropdown ? "drop-content show" : "drop-content"}>
-                <button className="profile-button">My Profile</button>
-                <button className="history-button">My Dining History</button>
-                <button className="saved-button">My Saved Restaurants</button>
+                <a className="profile-link">My Profile</a>
+                <a className="history-link">My Dining History</a>
+                <a className="saved-link">My Saved Restaurants</a>
                 <button className="signout-button" onClick={logout}>Sign out</button>
               </div>
           </div>
