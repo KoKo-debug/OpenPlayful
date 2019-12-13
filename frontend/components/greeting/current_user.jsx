@@ -44,9 +44,11 @@ class PersonalGreetings extends React.Component {
     const {currentUser, logout} = this.props;
     return(
       <hgroup className="header-group">
-        <h2 className="hi-user">Hi, {currentUser.first_name}</h2>
         <div className="dropdown" ref={this.reference}>
-          <button onBlur={this.someFunction(this.reference)} onClick={() => this.openDrop()} className="drop-button">
+          <button onBlur={this.someFunction(this.reference)} onClick={() => this.openDrop()} className="drop-button1">
+            <h2 className="hi-user">Hi, {currentUser.first_name}</h2>
+          </button>
+          <button onBlur={this.someFunction(this.reference)} onClick={() => this.openDrop()} className="drop-button2">
             <img id="letterV" src={window.letterV} alt="V" />
           </button>
           <div className={ this.state.dropdown ? "notch-container show" : "notch-container" }>
