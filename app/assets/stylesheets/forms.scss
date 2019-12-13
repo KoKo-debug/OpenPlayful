@@ -128,10 +128,9 @@ input[type="password"] {
   opacity: 0.5;
 }
 
-#location-arrow:hover {
-  opacity: 0.9;
+#location:hover + #location-arrow{
+  opacity: 1;
   pointer-events: none;
-  cursor: pointer;
 }
 
 // #location:after {
