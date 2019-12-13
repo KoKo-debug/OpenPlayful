@@ -23,7 +23,7 @@ class SigninForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = merge({}, this.state);
-    this.props.submitForm(user).then(this.props.closeModal());
+    this.props.signinForm(user).then(this.props.closeModal());
   }
 
   renderErrors() {
@@ -45,7 +45,7 @@ class SigninForm extends React.Component {
         email: "demo@gmail.com",
         password: "demopass"
       }
-      this.props.submitForm(user).then(user => this.props.closeModal())
+      this.props.signinForm(user).then(user => this.props.closeModal())
     }
   }
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import {signup } from '../../actions/session_actions';
+import {signup, signin } from '../../actions/session_actions';
 import SignupForm from './signup_form';
 import { fetchLocations } from '../../actions/location_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
@@ -14,13 +14,9 @@ const msp = (state) => {
 };
 
 const mdp = dispatch => ({
-  submitForm: (user) => dispatch(signup(user)),
+  signupForm: (user) => dispatch(signup(user)),
   fetchLocations: () => dispatch(fetchLocations()),
-  otherForm: (
-    <button onClick={() => dispatch(openModal('signin'))}>
-      Signin
-    </button>
-  ),
+  signinForm: (user) => dispatch(signin(user)),
   closeModal: () => dispatch(closeModal())
 });
 
