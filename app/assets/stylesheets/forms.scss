@@ -105,6 +105,9 @@ input[type="password"] {
   margin: 10px 0px;
   border: 1px solid rgb(197, 197, 197);
   border-radius: 1px;
+  padding-left: 15px;
+  color: #817475;
+  background-color: white;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -112,14 +115,33 @@ input[type="password"] {
 
 }
 
-#location:after {
-  content: "<>";
-    -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  right: 11px;
+#location:hover {
+  cursor: pointer;
 }
+
+#location-arrow {
+  display: flex;
+  position: absolute;
+  color: rgb(0, 0, 0);
+  left: 395px;
+  top: 437px;
+  opacity: 0.5;
+}
+
+#location-arrow:hover {
+  opacity: 0.9;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+// #location:after {
+//   content: "<>";
+//     -webkit-transform: rotate(90deg);
+//   -moz-transform: rotate(90deg);
+//   -ms-transform: rotate(90deg);
+//   transform: rotate(90deg);
+//   right: 11px;
+// }
 
 select option[disabled]:first-child {display: none;}
 
