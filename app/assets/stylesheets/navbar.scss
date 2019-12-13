@@ -51,7 +51,17 @@
   // overflow: hidden;
 }
 
-.dropdown .drop-button {
+.dropdown .drop-button1 {
+  display: flex;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.dropdown .drop-button2 {
+  display: flex;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -63,8 +73,8 @@
   position: absolute;
   box-shadow: none;
   width: 230px;
-  height: 135px;
-  top:15px;
+  height: 143px;
+  top: 34px;
   right: 10px;
   z-index: 4;
   background: white;
@@ -72,29 +82,43 @@
   flex-direction: column;
   border: 1px solid rgb(227, 224, 224);
   border-radius: 3px;
-
 }
+
+// #drop-items {
+//   font-size: 0;
+// }
 
 .dropdown .show {
   display: block;
   background: white;
 }
 
-.hi-user {
-  display: flex;
-  margin-right: 5px;
-}
 
 .dropdown {
+  display: flex;
   margin-right: 40px;
 }
 
+.hi-user {
+  opacity: 0.5;
+}
+
 #letterV {
+  opacity: 0.5;
   width: 16px;
   height: 16px;
 }
 
+.hi-user:hover {
+  opacity: 1;
+}
+
+#letterV:hover {
+  opacity: 1;
+}
+
 .profile-button {
+  font-size: 16px;
   display: flex;
   width: 100%;
   text-align: left;
@@ -104,8 +128,10 @@
   color: gray;
   cursor: pointer;
   padding: 13px;
+  padding-bottom: 20px;
 }
 .history-button {
+  font-size: 16px;
   display: flex;
   width: 100%;
   text-align: left;
@@ -115,8 +141,10 @@
   color: gray;
   cursor: pointer;
   padding: 13px;
+  padding-bottom: 20px;
 }
 .saved-button {
+  font-size: 16px;
   display: flex;
   width: 100%;
   text-align: left;
@@ -126,8 +154,10 @@
   color: gray;
   cursor: pointer;
   padding: 15px;
+  padding-bottom: 20px;
 }
 .signout-button {
+  font-size: 16px;
   display: flex;
   text-align: left;
   width: 100%;
@@ -137,7 +167,8 @@
   color: gray;
   cursor: pointer;
   padding: 15px;
-}
+  padding-bottom: 20px;
+} 
 
 .notch-container {
   display: none;
@@ -148,12 +179,12 @@
   position: absolute;
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid white;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid white;
   z-index: 5;
-  left: -95px;
-  top: 6px;
+  left: -100px;
+  top: 27px;
 }
 
 .outer-notch {
@@ -163,8 +194,8 @@
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-bottom:15px solid rgb(227, 224, 224);
-  left: -100px;
-  top: 4px;
+  left: -103px;
+  top: 25px;
   z-index: 3;
 }
 
