@@ -147,13 +147,13 @@ class SignupForm extends React.Component {
                  id="password2"
           />
           <div id="pass2-error"></div>
-          <div id="location-arrow">
-            <img id="letterV" src={window.letterV} alt="V" />
-          </div>
           <select id="location" defaultValue="" onChange={this.update("location_id")}>
             <option selected disabled>Primary Dining Location *</option>
             {locationLis}
           </select>
+          <div id="location-arrow">
+            <img id="letterV" src={window.letterV} alt="V" />
+          </div>
           <div id="location-error"></div>
           <button className ="create-account-button">Create Account</button>
           <span id="dontWantForm">Don't want to complete the form?</span>
