@@ -5,7 +5,7 @@
   align-items: center;
   background-color: white;
   padding: 5px 0px;
-  width: 1600px;
+  width: 100%;
   height: 50px;
   z-index: 2;
 }
@@ -79,7 +79,7 @@
   position: absolute;
   box-shadow: none;
   width: 230px;
-  height: 143px;
+  height: 152px;
   top: 34px;
   right: 10px;
   z-index: 4;
@@ -123,7 +123,7 @@
   opacity: 1;
 }
 
-.profile-button {
+.profile-link {
   font-size: 16px;
   display: flex;
   width: 100%;
@@ -133,10 +133,10 @@
   border: none;
   color: gray;
   cursor: pointer;
-  padding: 13px;
-  padding-bottom: 20px;
+  padding: 5px 0px;
+  padding-left: 15px;
 }
-.history-button {
+.history-link {
   font-size: 16px;
   display: flex;
   width: 100%;
@@ -146,10 +146,10 @@
   border: none;
   color: gray;
   cursor: pointer;
-  padding: 13px;
-  padding-bottom: 20px;
+  padding: 5px 0px;
+  padding-left: 15px;
 }
-.saved-button {
+.saved-link {
   font-size: 16px;
   display: flex;
   width: 100%;
@@ -159,8 +159,8 @@
   border: none;
   color: gray;
   cursor: pointer;
-  padding: 15px;
-  padding-bottom: 20px;
+  padding: 5px 0px;
+  padding-left: 15px;
 }
 .signout-button {
   font-size: 16px;
@@ -172,8 +172,7 @@
   border: none;
   color: gray;
   cursor: pointer;
-  padding: 15px;
-  padding-bottom: 20px;
+  padding-left: 15px;
 } 
 
 .notch-container {
