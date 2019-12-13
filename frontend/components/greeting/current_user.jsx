@@ -10,18 +10,29 @@ class PersonalGreetings extends React.Component {
       dropdown: false
     };
   }
+
   openDrop() {
+    if (this.state.dropdown === false) {
       this.setState({
         dropdown: true
-    });
+      })
+    } else {
+      this.setState({
+        dropdown: false
+      })
+    }
   }
+
+  // openDrop() {
+  //     this.setState({
+  //       dropdown: true
+  //   });
+  // }
 
 
   someFunction(ref) {
-    debugger;
     return event => {
       if (ref.current.contains(event.relatedTarget) === false) {
-        debugger;
         this.setState({
           dropdown: false
         });
@@ -37,16 +48,16 @@ class PersonalGreetings extends React.Component {
         <div className="dropdown" ref={this.reference}>
           <button onBlur={this.someFunction(this.reference)} onClick={() => this.openDrop()} className="drop-button">
             <img id="letterV" src={window.letterV} alt="V" />
-        </button>
+          </button>
           <div className={ this.state.dropdown ? "notch-container show" : "notch-container" }>
               <div className="notch"></div>
               <div className="outer-notch"></div>
-            <div id="drop-items" className={ this.state.dropdown ? "drop-content show" : "drop-content"}>
-              <button className="profile-button">My Profile</button>
-              <button className="history-button">My Dining History</button>
-              <button className="saved-button">My Saved Restaurants</button>
-              <button className="signout-button" onClick={logout}>Sign out</button>
-            </div>
+              <div id="drop-items" className={ this.state.dropdown ? "drop-content show" : "drop-content"}>
+                <button className="profile-button">My Profile</button>
+                <button className="history-button">My Dining History</button>
+                <button className="saved-button">My Saved Restaurants</button>
+                <button className="signout-button" onClick={logout}>Sign out</button>
+              </div>
           </div>
         </div>
       </hgroup>
@@ -55,3 +66,6 @@ class PersonalGreetings extends React.Component {
 }
 
 export default PersonalGreetings;
+
+
+// onBlur = { this.someFunction(this.reference) }  NEXT TO ON CLICK= this.openDop()
