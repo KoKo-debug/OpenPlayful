@@ -1,0 +1,32 @@
+.search-bar {
+  position: absolute;
+  display: flex;
+  top: 62px;
+  background-image: url("plastic-animal-toys.png");
+  background-size: cover;
+  background-position: center 80%;
+  background-repeat: no-repeat;
+  width: 1600px;
+  height: 416px;
+  margin: auto;
+  padding: 0;
+}
+
+.search-header {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.searchForm {
+  display: flex;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  background-color: transparent;
+  width: 1200px;
+  height: 50px;
+}

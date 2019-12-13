@@ -75,8 +75,9 @@ input[type="text"] {
   height: 45px;
   margin: 10px 0px;
   border: 1px solid rgb(191, 191, 191);
-  border-radius: 1px;
+  border-radius: 3px;
   box-shadow: none;
+  font-size: 14px;
 }
 
 input[type="email"] {
@@ -85,8 +86,9 @@ input[type="email"] {
   height: 45px;
   margin: 10px 0px;
   border: 1px solid rgb(191, 191, 191);
-  border-radius: 1px;
+  border-radius: 3px;
   box-shadow: none;
+  font-size: 14px;
 }
 
 input[type="password"] {
@@ -95,8 +97,9 @@ input[type="password"] {
   height: 45px;
   margin: 10px 0px;
   border: 1px solid rgb(191, 191, 191);
-  border-radius: 1px;
+  border-radius: 3px;
   box-shadow: none;
+  font-size: 14px;
 }
 
 #location {
@@ -104,7 +107,7 @@ input[type="password"] {
   height: 47px;
   margin: 10px 0px;
   border: 1px solid rgb(197, 197, 197);
-  border-radius: 1px;
+  border-radius: 3px;
   padding-left: 15px;
   color: #817475;
   background-color: white;
@@ -112,6 +115,7 @@ input[type="password"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   box-shadow: none;
+  font-size: 14px;
 
 }
 
@@ -148,10 +152,11 @@ select option[disabled]:first-child {display: none;}
   color: white;
   background-color: #e0323e;
   width: 98%;
-  height: 35px;
+  height: 53px;
   margin-top: 20px;
   border-color: #e0323e;
-  border-radius: 2px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 #dontWantForm {
@@ -170,9 +175,11 @@ select option[disabled]:first-child {display: none;}
   background-color: lightcoral;
   border-color: lightcoral;
   margin-top: 3px;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 5px 0px;
   width: 98.5%;
+  height: 40px;
+  cursor: pointer;
 }
 
 .newToContainer {
@@ -200,11 +207,12 @@ select option[disabled]:first-child {display: none;}
   color: white;
   background-color: #e0323e;
   width: 98%;
-  height: 35px;
+  height: 53px;
   margin-top: 20px;
   border-color: #e0323e;
-  border-radius: 2px;
+  border-radius: 3px;
   padding-left: 3px;
+  cursor: pointer;
 }
 
 .form-header {
