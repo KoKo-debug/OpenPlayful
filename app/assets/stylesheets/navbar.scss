@@ -1,11 +1,11 @@
 .navBar {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
   background-color: white;
-  padding: 5px;
-  width: 1595px;
+  padding: 5px 0px;
+  width: 1600px;
   height: 50px;
   z-index: 2;
 }
@@ -29,6 +29,7 @@
   margin-left: 4px;
   margin-right: 30px;
   background: none;
+  cursor: pointer;
 }
 
 .signup-button {
@@ -39,6 +40,7 @@
   border-color: #47899f;
   border-radius: 3px;
   padding: 8px 12px;
+  cursor: pointer;
 
 }
 
@@ -61,7 +63,7 @@
   position: absolute;
   box-shadow: none;
   width: 230px;
-  height: 120px;
+  height: 135px;
   top:15px;
   right: 10px;
   z-index: 4;
@@ -69,16 +71,13 @@
   justify-content: left;
   flex-direction: column;
   border: 1px solid rgb(227, 224, 224);
+  border-radius: 3px;
 
 }
 
 .dropdown .show {
   display: block;
   background: white;
-}
-
-.dropdown .signout-button {
-  display: block;
 }
 
 .hi-user {
@@ -103,6 +102,8 @@
   background: none;
   border: none;
   color: gray;
+  cursor: pointer;
+  padding: 13px;
 }
 .history-button {
   display: flex;
@@ -112,6 +113,8 @@
   background: none;
   border: none;
   color: gray;
+  cursor: pointer;
+  padding: 13px;
 }
 .saved-button {
   display: flex;
@@ -121,6 +124,8 @@
   background: none;
   border: none;
   color: gray;
+  cursor: pointer;
+  padding: 15px;
 }
 .signout-button {
   display: flex;
@@ -130,6 +135,8 @@
   background: none;
   border: none;
   color: gray;
+  cursor: pointer;
+  padding: 15px;
 }
 
 .notch-container {

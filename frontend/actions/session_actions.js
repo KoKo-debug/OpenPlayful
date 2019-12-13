@@ -36,8 +36,3 @@ export const signin = user => dispatch => (
 export const logout = () => dispatch => (
   APIUtil.logout().then(() => dispatch(logoutCurrentUser()))
 );
-
-//// check .then(user => dispatch....)
-
-//,
-// err => dispatch(receiveErrors(err))

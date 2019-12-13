@@ -4,7 +4,7 @@ import SearchBar from './search_bar';
 
 const msp = state => {
   return {
-
+    
   }
 }
 
@@ -14,4 +14,4 @@ const mdp = dispatch => {
   }
 }
 
-export default connect(msp, mdp)(search)
+export default connect(msp, mdp)(searchBar);

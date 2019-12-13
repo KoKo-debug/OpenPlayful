@@ -23,7 +23,7 @@ class SigninForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = merge({}, this.state);
-    this.props.signinForm(user).then(this.props.closeModal());
+    this.props.signinForm(user).then(user => this.props.closeModal());
   }
 
   renderErrors() {
@@ -36,6 +36,11 @@ class SigninForm extends React.Component {
         ))}
       </ul>
     )
+  }
+
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   demoSignin(e) {
@@ -51,6 +56,7 @@ class SigninForm extends React.Component {
 
   otherModalFunc() {
     this.props.closeModal();
+    this.props.clearErrors();
     this.props.otherModal();
   }
 
