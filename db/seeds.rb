@@ -108,24 +108,72 @@ demo = User.create!(
 
 photo1 = Photo.create!(
   name: "Unicorn",
-  url: "https://i.imgur.com/oHZROBh.jpg",
+  url: "https://open-playful-public.s3.amazonaws.com/unicorn.png",
   cafe_id: 3
 )
 
 photo2 = Photo.create!(
   name: "TableDog",
-  url: "https://imgur.com/M1vdh4j",
+  url: "https://open-playful-public.s3.amazonaws.com/puppy-table.png",
   cafe_id: 4
 )
 
 photo3 = Photo.create!(
   name: "Kangaroo",
-  url: "https://imgur.com/6ue5QSq",
+  url: "https://open-playful-public.s3.amazonaws.com/kangaroo.png",
   cafe_id: 1
 )
 
 photo4 = Photo.create!(
   name: "WelcomCat",
-  url: "https://imgur.com/h9tVIcW",
+  url: "https://open-playful-public.s3.amazonaws.com/welcome-cat.png",
   cafe_id: 2
+)
+
+photo5 = Photo.create!(
+  name: "3monkies",
+  url: "https://open-playful-public.s3.amazonaws.com/3-monkeys-on-brown-wooden-palette-234054.jpg",
+  cafe_id: 3
+)
+
+photo6 = Photo.create!(
+  name: "Tiger",
+  url: "https://open-playful-public.s3.amazonaws.com/angry-animal-big-carnivore-302304.jpg",
+  cafe_id: 2
+)
+
+photo7 = Photo.create!(
+  name: "flourHands",
+  url: "https://open-playful-public.s3.amazonaws.com/baked-baking-chef-dough-784633.jpg",
+  cafe_id: 2
+)
+
+photo8 = Photo.create!(
+  name: "cookingTrunk",
+  url: "https://open-playful-public.s3.amazonaws.com/chef-preparing-vegetable-dish-on-tree-slab-1267320.jpg",
+  cafe_id: 1
+)
+
+photo9 = Photo.create!(
+  name: "burgers",
+  url: "https://open-playful-public.s3.amazonaws.com/food-dinner-lunch-unhealthy-70497.jpg",
+  cafe_id: 1
+)
+
+photo10 = Photo.create!(
+  name: "veggies",
+  url: "https://open-playful-public.s3.amazonaws.com/lunch-table-5929.jpg",
+  cafe_id: 4
+)
+
+photo11 = Photo.create!(
+  name: "ape",
+  url: "https://open-playful-public.s3.amazonaws.com/view-ape-thinking-primate-33535.jpg",
+  cafe_id: 3
+)
+
+photo12 = Photo.create!(
+  name: "Elephant",
+  url: "https://open-playful-public.s3.amazonaws.com/view-of-elephant-in-water-247431.jpg",
+  cafe_id: 4
 )

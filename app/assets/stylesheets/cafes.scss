@@ -12,7 +12,63 @@
   width: 40%;
 }
 
+.cafe-item-container {
+  display: flex;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.cafe-picture {
+  height: 203px;
+  width: 203px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  line-height: 203px;
+  text-align: center;
+  position: relative;
+}
+
+#cafeMainPic {
+  max-width: 160%;
+  position: absolute;
+  height: auto;
+  left: -30%;
+  top: 0%;
+}
+
+
+.index-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
 .cafe-index-name {
   text-decoration: none;
   color: rgb(18, 148, 187);
+}
+
+.ratings-row {
+  display: flex;
+}
+
+.index-rating {
+  margin-right: 5px;
+}
+
+.cost-animal-city {
+  display: flex;
+}
+
+.index-cost {
+  margin-right: 15px;
+}
+
+.animal-type {
+  margin-right: 15px;
+}
+
+.city {
+  margin-right: 15px;
 }

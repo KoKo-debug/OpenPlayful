@@ -82,45 +82,57 @@ class CafeIndexItem extends React.Component {
     const { cafe } = this.props
     const {name, animal, city} = this.props.cafe
 
+    let red = false;
     return (
       <div className="cafe-item-container">
-        {/* <div className="cafe-picture">
+        <div className="cafe-picture">
           <Link to={`/cafes/${this.props.cafe.id}`}>
-              <img src={this.props.cafe.url[0]} alt="cafe picture" crossOrigin="true"/>
+            <img id="cafeMainPic" src={cafe.url[0]} alt="cafe picture"/>
           </Link>
-        </div> */}
-
-        <Link to={`/cafes/${cafe.id}`} className="cafe-index-name">
-          {name}  
-        </Link>
-
-        <div className="rating">
-          <Ratings average_rating={5} /> 
         </div>
 
-        <div className="num-reviews">
-          {this.numReviews()}
-        </div>
-        
-        <div className="cost">
-          {this.cost()}
-        </div>
+        <section className="index-info">
+          <span>
+            <Link to={`/cafes/${cafe.id}`} className="cafe-index-name">
+              {name}  
+            </Link>
+          </span>
 
-        <div className="animal-type">
-          {animal}
-        </div>
+          <span className="ratings-row">
+            <div className="index-rating">
+              <Ratings average_rating={5} red={red} /> 
+            </div>
+            <div className="index-num-reviews">
+              {this.numReviews()}
+            </div>
+          </span>
 
-        <div>
-          {city}
-        </div>
+          <span className="cost-animal-city">
+            <div className="index-cost">
+              {this.cost()}
+            </div>
 
-        <div>
-          number of booked times today
-        </div>
+            <div className="animal-type">
+              {animal}
+            </div>
 
-        <div>
-          {this.timeSlots()}
-        </div>
+            <div className="city">
+              {city}
+            </div>
+          </span>
+          
+          <span className="booked-today">
+            <div className="booked-text">
+              number of booked times today
+            </div>
+          </span>
+
+          {/* <span className> */}
+            <div className="index-timeslots">
+              {this.timeSlots()}
+            </div>
+          {/* </span> */}
+        </section>
 
 
       </div>
