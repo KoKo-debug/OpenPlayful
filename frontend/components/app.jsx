@@ -7,15 +7,15 @@ import CafeIndexContainer from './cafes/cafe_index_container';
 import CafeShowContainer from './cafes/cafe_show_container';
 
 const App = () => (
-    <header className="page">
+    <div className="page">
       <Modal />
       <TopBar />
-        <Switch>
-          <Route exact path="/" component={Splash} />
-          <Route exact path="/cafes" component={CafeIndexContainer} />
-          <Route path="/cafes/:cafeId" component={CafeShowContainer} />
-        </Switch>
-    </header>
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Route exact path="/cafes" component={CafeIndexContainer} />
+        <Route path="/cafes/:cafeId" component={CafeShowContainer} />
+      </Switch>       
+    </div>
 );
 
 export default App;

@@ -1,0 +1,128 @@
+.cafe-show-outer-container {
+  position: absolute;
+  display: flex;
+  background-color: white;
+  top: 277px;
+  width: 33%;
+  left: 450px;
+  padding: 10px;
+}
+
+.cafe-show-info-container {
+  width: 100%;
+}
+
+.cafe-navBar {
+  box-sizing: border-box;
+  padding: 7px 0px;
+  border-bottom: 1px solid rgb(205, 200, 200);
+  cursor: pointer;
+}
+
+.cafe-nav {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(104, 101, 101);
+}
+
+.cafe-nav:hover {
+  color: red;
+  border-bottom: 2px solid red;
+  padding-bottom: 9px;
+}
+
+.overview {
+  margin-right: 23px;
+}
+
+.photos {
+  margin-right: 23px;
+}
+
+.menu {
+  margin-right: 23px;
+}
+
+.reviews {
+  margin-right: 23px;
+}
+
+.cafe-header {
+  font-size: 50px;
+  color: rgb(67, 66, 66);
+  background-color: white;
+  box-sizing: border-box;
+  padding: 15px 0px;
+}
+
+.cafe-details {
+  display: flex;
+}
+
+.rating {
+  display: flex;
+}
+
+.average {
+  width: 5%;
+  margin-left: 5px;
+}
+
+.num-reviews {
+  display: flex;
+  margin-left: 10px;
+  width: 20%;
+}
+
+.info-review {
+  width: 10%;
+  margin-left: 5px;
+}
+
+.cost {
+  margin-left: 5px;
+  width: 30%;
+}
+
+.animal {
+  width: 10%
+}
+
+.description {
+  padding: 30px 0px;
+  display: flex;
+  width: 100%;
+  color: rgb(109, 107, 107);
+}
+
+.photos-header {
+  font-size: 22px;
+}
+
+#menu {
+  margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-header {
+  font-size: 22px;
+  padding: 15px 0px;
+}
+
+.menu-items {
+  width: 100%;
+  padding: 15px 0px;
+  border-top: 1px solid rgb(184, 184, 184);
+  border-bottom: 1px solid rgb(184, 184, 184);
+}
+
+.review-header {
+  font-size: 22px;
+}
+
+.reviews-info-container {
+  border-top: 1px solid rgb(184, 184, 184);
+  border-bottom: 1px solid rgb(184, 184, 184);
+  padding: 15px 0px;
+}

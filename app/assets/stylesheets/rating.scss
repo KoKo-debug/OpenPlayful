@@ -1,0 +1,22 @@
+.outer-star {
+  display: inline-block;
+  position: relative;
+}
+
+.fill-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30%;
+}
+
+#grayStars {
+  height: 15px;
+  width: 69px;
+}
+
+#redStars {
+  width: 72px;
+}

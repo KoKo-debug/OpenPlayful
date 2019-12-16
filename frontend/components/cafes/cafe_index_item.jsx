@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Ratings from './rating';
+
 class CafeIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -88,12 +90,12 @@ class CafeIndexItem extends React.Component {
           </Link>
         </div> */}
 
-        <Link to={`/cafes/${cafe.id}`} >
+        <Link to={`/cafes/${cafe.id}`} className="cafe-index-name">
           {name}  
         </Link>
 
         <div className="rating">
-          1star 2star 3star 4star 5star
+          <Ratings average_rating={5} /> 
         </div>
 
         <div className="num-reviews">

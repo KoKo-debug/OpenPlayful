@@ -1,12 +1,14 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link'
 import { Link } from 'react-router-dom'
+import Ratings from './rating';
 
 class CafeShow extends React.Component {
   constructor(props) {
     super(props)
 
   }
+
 
 
   componentDidMount() {
@@ -37,31 +39,26 @@ class CafeShow extends React.Component {
             {/* if HashLink is okay */}
             <HashLink 
               to={`/cafes/${cafe.id}#overview`}
-              className="cafe-nav">
+              className="cafe-nav overview">
                 Overview
             </HashLink>
 
             <HashLink
               to={`/cafes/${cafe.id}#photos`}
-              className="cafe-nav">
+              className="cafe-nav photos">
                 Photos
             </HashLink>
 
             <HashLink
               to={`/cafes/${cafe.id}#menu`}
-              className="cafe-nav">
+              className="cafe-nav menu">
                 Menu
             </HashLink>
 
-            <HashLink
-              to={`/cafes/${cafe.id}#specials`}
-              className="cafe-nav">
-                Specials
-            </HashLink>
 
             <HashLink
               to={`/cafes/${cafe.id}#reviews`}
-              className="cafe-nav">
+              className="cafe-nav reviews">
                 Reviews
             </HashLink>
           </div>
@@ -70,13 +67,22 @@ class CafeShow extends React.Component {
             <h1 className="cafe-header">
               {cafe.name}
             </h1>
+
             <div className="cafe-details">
               <div className="rating">
-                  stars 1-5 {average_rating}
+                  <Ratings average_rating={3} /> 
+                  <h3 className="average">
+                    {3.2}
+                  </h3>
               </div>
               
+
+      
               <div className="num-reviews">
-                {number_reviews} Reviews
+                <div>
+                  {number_reviews}
+                </div>
+                <h3 className="info-review">Reviews</h3>
               </div>
 
               <div className="cost">
@@ -86,40 +92,35 @@ class CafeShow extends React.Component {
               <div className="animal">
                 {animal}
               </div>
+            </div>
 
-              <div className="description">
-                {description}
-              </div>
+            <div className="description">
+              {description}
             </div>
 
             <div id="photos">
-              <h1>{url.length} Photos</h1>
+              <h1 className="photos-header">{url.length} Photos</h1>
               Somehow PhotoAlbum
             </div>
 
             <div id="menu">
-              <h1>
+              <h1 className="menu-header">
                 Menu
               </h1>
-              <Link to="">
+              <Link to="" className="menu-items">
                 View menu on restaurant's website
               </Link>
             </div>
 
-            <div id="speicals">
-                <h1>
-                  Specials
-                </h1>
-            </div>
-
             <div id="reviews">
-              <h1>
+              <h1 className="review-header">
                 What {number_reviews} People Are Saying
               </h1>
-
-              <h2>
-                Overall ratings and reviews
-              </h2>
+              <div className="reviews-info-container">
+                <h2>
+                  Overall ratings and reviews
+                </h2>
+              </div>
             </div>
 
           </div>

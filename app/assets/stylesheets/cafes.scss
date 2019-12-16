@@ -1,0 +1,18 @@
+// Place all the styles related to the api/cafes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.outer-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  top: 65px;
+  width: 40%;
+}
+
+.cafe-index-name {
+  text-decoration: none;
+  color: rgb(18, 148, 187);
+}
