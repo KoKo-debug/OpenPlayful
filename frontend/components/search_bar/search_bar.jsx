@@ -7,6 +7,8 @@ class SearchBar extends React.Component {
     this.state = {
       timeAMPM: ""
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   populateTime() {
@@ -38,6 +40,13 @@ class SearchBar extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+  
+  //for now just fetches all kitches disregarding options selected
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.fetchAllCafes().then( cafes => 
+      this.props.history.push('/cafes'))
+  }
 
   render() {
     let timeLis = this.populateTime().map(time => 
@@ -52,13 +61,14 @@ class SearchBar extends React.Component {
         <header className="search-header">
           Find your animal for any occasion
         </header>
-        <form className="searchForm">
+        <form className="searchForm" onSubmit={this.handleSubmit}>
           <input type="date" name="" id=""/>
           
           <select id="time" defaultValue={this.state.timeAMPM} onChange={this.update("timeAMPM")}>
             {timeLis}
           </select>
 
+          <button>Let's go</button>
         </form>
       </div>
 

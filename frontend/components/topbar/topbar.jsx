@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import GreetingContainer from '../greeting/greeting_container';
 
 const TopBar = () => (
     <header className="navBar">
       <button className="logo-button">
-        <img id="logo" src={window.logoWhite} alt="logo"/>
+        <Link to="/">
+          <img id="logo" src={window.logoWhite} alt="logo"/>
+        </Link>
       </button>
       <GreetingContainer />
     </header>

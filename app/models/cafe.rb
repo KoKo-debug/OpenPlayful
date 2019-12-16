@@ -21,4 +21,10 @@
 #
 
 class Cafe < ApplicationRecord
+  validates :name, :animal, :cost, :address, :city, :country, :location_id, :phone_number, presence: true
+  
+
+
+  has_many :photos
+  
 end
