@@ -14,7 +14,7 @@ Cafe.destroy_all
 c1 = Cafe.create!(
   name: "Joey's Kangaroo Cafe",
   animal: "Kangaroo",
-  description: "drink tea while petting kangaroos",
+  description: "drink tea while petting kangaroos. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
   cost: 2,
   number_reviews: 3,
   address: "35th St.",

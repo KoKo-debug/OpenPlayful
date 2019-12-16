@@ -45,7 +45,7 @@ class CafeIndex extends React.Component {
       const cafeLis = this.props.cafes.map(cafe =>
         <CafeIndexItem key={ cafe.id } cafe={ cafe } />)
       return (
-        <div className="cafe-index container">
+        <div className="cafe-index outer-container">
           {cafeLis}
         </div>
       )
