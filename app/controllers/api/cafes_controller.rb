@@ -4,9 +4,6 @@ class Api::CafesController < ApplicationController
   def index
     # for now, all cafes (filter later)
     @cafes = Cafe.all
-    @cafes.each do |cafe|
-      @photos = cafe.photos.pluck(:url)
-    end
 
   end
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link'
-import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import Ratings from './rating';
 
 class CafeShow extends React.Component {
@@ -17,6 +17,9 @@ class CafeShow extends React.Component {
   }
 
   render() {
+
+    let red = true;
+
     if (!this.props.cafe) return null;
 
     const {cafe} = this.props
@@ -32,9 +35,20 @@ class CafeShow extends React.Component {
         return "$50 and over"
       }
     }
+
+    const photoLis = cafe.url.map(url =>
+      <a className="photo-gallery">
+        <img className="gallery-images" key={url} src={url} />
+      </a>
+    );
+    
+    
     return(
-      <div className="cafe-show-outer-container">
-        <div className="cafe-show-info-container">
+      <div>
+
+      <section className="cafe-show-outer-container">
+      </section>
+        <section className="cafe-show-info-container">
           <div className="cafe-navBar">
             {/* if HashLink is okay */}
             <HashLink 
@@ -42,6 +56,16 @@ class CafeShow extends React.Component {
               className="cafe-nav overview">
                 Overview
             </HashLink>
+
+            {/* For hashLink
+
+            Window.scrollTo(0, 200)
+
+            Function()
+
+            Y = menu.height + overview.height
+
+            window.scrollTo (0, y) */}
 
             <HashLink
               to={`/cafes/${cafe.id}#photos`}
@@ -70,7 +94,7 @@ class CafeShow extends React.Component {
 
             <div className="cafe-details">
               <div className="rating">
-                  <Ratings average_rating={3} /> 
+                  <Ratings average_rating={3} red={red} /> 
                   <h3 className="average">
                     {3.2}
                   </h3>
@@ -100,7 +124,9 @@ class CafeShow extends React.Component {
 
             <div id="photos">
               <h1 className="photos-header">{url.length} Photos</h1>
-              Somehow PhotoAlbum
+              <section className="photo-list">
+                {photoLis}
+              </section>
             </div>
 
             <div id="menu">
@@ -120,12 +146,21 @@ class CafeShow extends React.Component {
                 <h2>
                   Overall ratings and reviews
                 </h2>
+
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga minima doloribus aperiam corporis animi aliquid, quisquam saepe ea incidunt minus reprehenderit molestiae accusamus, ipsum vel voluptas explicabo, ex voluptatem perspiciatis?
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus explicabo sapiente ab fugiat quo at mollitia architecto iste eveniet, molestiae autem quod molestias saepe deserunt reiciendis eius maxime temporibus dolorum?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore sequi omnis explicabo veniam, id error adipisci amet fuga qui autem, culpa ea hic nostrum eum illo harum? Aut, praesentium maiores?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, temporibus? Saepe libero ratione aliquid iure ut illo soluta eveniet, laborum accusantium aspernatur quidem fuga error nobis alias, ipsum facilis ducimus?
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore beatae debitis doloremque sit, nisi repudiandae voluptas saepe nemo non nostrum laboriosam voluptatum ullam cupiditate aut sint tempore sequi, vitae dicta.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, eaque, ullam praesentium quasi tempora nobis omnis eum aspernatur vero veniam reprehenderit nam accusamus voluptatibus esse itaque dolores sapiente commodi minus!
+                </p>
               </div>
             </div>
 
           </div>
        
-        </div>
+        </section>
       </div>
     )
   }

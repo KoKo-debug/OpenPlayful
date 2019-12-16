@@ -1,15 +1,22 @@
 .cafe-show-outer-container {
   position: absolute;
   display: flex;
-  background-color: white;
-  top: 277px;
-  width: 33%;
-  left: 450px;
-  padding: 10px;
+  background-color: cadetblue;
+  top: 60px;
+  width: 80%;
+  height: 280px;
+  left: 10%;
 }
 
 .cafe-show-info-container {
-  width: 100%;
+  position: absolute;
+  display: flex;
+  background-color: white;
+  top: 290px;
+  width: 33%;
+  left: 450px;
+  padding: 10px;
+  flex-direction: column;
 }
 
 .cafe-navBar {
@@ -125,4 +132,29 @@
   border-top: 1px solid rgb(184, 184, 184);
   border-bottom: 1px solid rgb(184, 184, 184);
   padding: 15px 0px;
+}
+
+.photo-gallery {
+  display: flex;
+}
+
+#photos {
+  box-sizing: border-box;
+}
+
+.photo-list {
+  overflow: scroll;
+  box-sizing: border-box;
+  line-height: 0px;
+  column-count: 3;
+  column-gap: 3px;
+  height: 250px;
+  break-inside: avoid;
+}
+
+.gallery-images {
+  width: 100% !important;
+  height: auto !important;
+  margin: 1px 0px;
+  
 }
