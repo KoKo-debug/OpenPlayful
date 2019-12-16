@@ -13,7 +13,7 @@ Cafe.destroy_all
 
 c1 = Cafe.create!(
   name: "Joey's Kangaroo Cafe",
-  anime: "Kangaroo",
+  animal: "Kangaroo",
   description: "drink tea while petting kangaroos",
   cost: 2,
   number_reviews: 3,
@@ -28,47 +28,47 @@ c1 = Cafe.create!(
 
 c2 = Cafe.create!(
   name: "Sleepy Cat Cafe",
-  anime: "Cat",
+  animal: "Cat",
   description: "drink eat with sleeping cats",
   cost: 3,
   number_reviews: 5,
   address: "12 Main St.",
-  city: "Florida",
+  city: "Orlando",
   country: "United States",
-  lat: 40.7128,
-  long: 74.0060,
-  location_id: 1,
-  phone_number: "232-131-1255"
+  lat: 27.6648,
+  long: 81.5158,
+  location_id: 2,
+  phone_number: "538-131-1455"
 )
 
 c3 = Cafe.create!(
-  name: "Joey's Kangaroo Cafe",
-  anime: "Kangaroo",
-  description: "drink tea while petting kangaroos",
+  name: "Sleeping Sheep",
+  animal: "Sheep",
+  description: "A ver long description much longer than others. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
   cost: 2,
-  number_reviews: 3,
-  address: "35th St.",
-  city: "New York",
+  number_reviews: 11,
+  address: "19 Monkey Dr.",
+  city: "Long Beach",
   country: "United States",
-  lat: 40.7128,
-  long: 74.0060,
-  location_id: 1,
-  phone_number: "232-131-1255"
+  lat: 36.7783,
+  long: 119.4179,
+  location_id: 3,
+  phone_number: "992-581-2155"
 )
 
 c4 = Cafe.create!(
-  name: "Joey's Kangaroo Cafe",
-  anime: "Kangaroo",
-  description: "drink tea while petting kangaroos",
-  cost: 2,
-  number_reviews: 3,
-  address: "35th St.",
+  name: "Doggy Den",
+  animal: "Dog",
+  description: "Food, drinks, and dogs. Big and small, cute and ugly.",
+  cost: 4,
+  number_reviews: 2,
+  address: "10 Silver Rd.",
   city: "New York",
   country: "United States",
-  lat: 40.7128,
-  long: 74.0060,
+  lat: 42.5128,
+  long: 73.7560,
   location_id: 1,
-  phone_number: "232-131-1255"
+  phone_number: "552-291-3585"
 )
 
 l1 = Location.create!(
@@ -105,3 +105,27 @@ demo = User.create!(
   location_id: 3
 )
 
+
+photo1 = Photo.create!(
+  name: "Unicorn",
+  url: "https://i.imgur.com/oHZROBh.jpg",
+  cafe_id: 3
+)
+
+photo2 = Photo.create!(
+  name: "TableDog",
+  url: "https://imgur.com/M1vdh4j",
+  cafe_id: 4
+)
+
+photo3 = Photo.create!(
+  name: "Kangaroo",
+  url: "https://imgur.com/6ue5QSq",
+  cafe_id: 1
+)
+
+photo4 = Photo.create!(
+  name: "WelcomCat",
+  url: "https://imgur.com/h9tVIcW",
+  cafe_id: 2
+)
