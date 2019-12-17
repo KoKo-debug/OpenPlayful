@@ -39,6 +39,8 @@ class CafeShow extends React.Component {
   //   window.scrollTo(0, y)
   // }
 
+  
+
   scrollToPhoto() {
     this.photoRef.current.scrollIntoView(true)
   }
