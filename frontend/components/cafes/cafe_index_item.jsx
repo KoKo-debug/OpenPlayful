@@ -87,7 +87,7 @@ class CafeIndexItem extends React.Component {
       <div className="cafe-item-container">
         <div className="cafe-picture">
           <Link to={`/cafes/${this.props.cafe.id}`}>
-            <img id="cafeMainPic" src={cafe.url[0]} alt="cafe picture"/>
+            <img id="cafeMainPic" src={cafe.urls[0]} alt="cafe picture"/>
           </Link>
         </div>
 

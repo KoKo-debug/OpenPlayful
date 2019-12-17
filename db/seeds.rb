@@ -91,11 +91,19 @@ c4 = Cafe.create!(
 
 
 user1 = User.create!(
-  first_name: "tommy",
-  last_name: "cat",
+  first_name: "Tommy",
+  last_name: "Cat",
   email: "tommy@gmail.com",
   password: "hunter22",
   location_id: 1
+)
+
+user2 = User.create!(
+  first_name: "Andy",
+  last_name: "Randy",
+  email: "randy@gmail.com",
+  password: "hunter11",
+  location_id: 2
 )
 
 demo = User.create!(
@@ -212,5 +220,53 @@ photo17 = Photo.create!(
 photo18 = Photo.create!(
   name: "Burito",
   url: "https://open-playful-public.s3.amazonaws.com/burrito-chicken-delicious-dinner-461198.jpg",
+  cafe_id: 1
+)
+
+review1 = Review.create!(
+  rating: 4,
+  body: "Great food, had a good time.",
+  overall: 4,
+  food: 5,
+  service: 3,
+  value: 3,
+  ambience: 4,
+  user_id: 1,
+  cafe_id: 1
+)
+
+review1 = Review.create!(
+  rating: 4,
+  body: "Great food, had a good time.",
+  overall: 4,
+  food: 5,
+  service: 3,
+  value: 3,
+  ambience: 4,
+  user_id: 1,
+  cafe_id: 1
+)
+
+review1 = Review.create!(
+  rating: 2,
+  body: "Had a rough time. Food was okay but the place was very smelly",
+  overall: 2,
+  food: 3,
+  service: 1,
+  value: 2,
+  ambience: 1,
+  user_id: 3,
+  cafe_id: 1
+)
+
+review1 = Review.create!(
+  rating: 5,
+  body: "I will come back again, it was a great experience.",
+  overall: 5,
+  food: 3,
+  service: 4,
+  value: 4,
+  ambience: 4,
+  user_id: 2,
   cafe_id: 1
 )
