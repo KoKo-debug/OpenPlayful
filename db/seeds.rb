@@ -23,15 +23,12 @@ l2 = Location.create!(
   long: 23.1313
   )
   
-debugger;
-
 l3 = Location.create!(
   name: "California",
   lat: 35.2444,
   long: 24.1313
   )
 
-debugger;
 c1 = Cafe.create!(
   name: "Joey's Kangaroo Cafe",
   animal: "Kangaroo",
@@ -47,7 +44,6 @@ c1 = Cafe.create!(
   phone_number: "232-131-1255"
 )
 
-debugger;
 c2 = Cafe.create!(
   name: "Sleepy Cat Cafe",
   animal: "Cat",
