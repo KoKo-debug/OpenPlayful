@@ -9,7 +9,7 @@
 User.delete_all
 Location.destroy_all
 Cafe.destroy_all
-
+Photo.destroy_all
 
 c1 = Cafe.create!(
   name: "Joey's Kangaroo Cafe",
