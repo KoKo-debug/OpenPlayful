@@ -177,3 +177,39 @@ photo12 = Photo.create!(
   url: "https://open-playful-public.s3.amazonaws.com/view-of-elephant-in-water-247431.jpg",
   cafe_id: 4
 )
+
+photo13 = Photo.create!(
+  name: "cutlet",
+  url: "https://open-playful-public.s3.amazonaws.com/fried-meat-on-top-of-white-plate-1059943.jpg",
+  cafe_id: 1
+)
+
+photo14 = Photo.create!(
+  name: "yogurt",
+  url: "https://open-playful-public.s3.amazonaws.com/bowl-breakfast-calcium-cereal-414262.jpg",
+  cafe_id: 1
+)
+
+photo15 = Photo.create!(
+  name: "steakfood",
+  url: "https://open-playful-public.s3.amazonaws.com/steak-food-769289.jpg",
+  cafe_id: 1
+)
+
+photo16 = Photo.create!(
+  name: "dogBread",
+  url: "https://open-playful-public.s3.amazonaws.com/slice-of-loaf-bread-with-dog-face-920220.jpg",
+  cafe_id: 1
+)
+
+photo17 = Photo.create!(
+  name: "chickenLeaf",
+  url: "https://open-playful-public.s3.amazonaws.com/fries-with-leaves-dish-718742.jpg",
+  cafe_id: 1
+)
+
+photo18 = Photo.create!(
+  name: "Burito",
+  url: "https://open-playful-public.s3.amazonaws.com/burrito-chicken-delicious-dinner-461198.jpg",
+  cafe_id: 1
+)
