@@ -25,6 +25,7 @@ class Cafe < ApplicationRecord
   
 
 
-  has_many :photos
-  
+  has_many :photos, class_name: "Photo"
+  belongs_to :location
+
 end
