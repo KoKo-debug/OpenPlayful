@@ -14,5 +14,5 @@ class Photo < ApplicationRecord
   validates :url, :cafe_id, presence: true
 
 
-  belongs_to :cafe, optional: true
+  belongs_to :cafe
 end

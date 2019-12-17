@@ -23,6 +23,6 @@ class Api::CafesController < ApplicationController
   private
 
   def cafe_params
-
+    
   end
 end
