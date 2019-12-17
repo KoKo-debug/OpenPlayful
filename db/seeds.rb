@@ -132,8 +132,8 @@ photo4 = Photo.create!(
 )
 
 photo5 = Photo.create!(
-  name: "3monkies",
-  url: "https://open-playful-public.s3.amazonaws.com/3-monkeys-on-brown-wooden-palette-234054.jpg",
+  name: "pasta",
+  url: "https://open-playful-public.s3.amazonaws.com/closes-up-photo-of-macaroni-1437267.jpg",
   cafe_id: 3
 )
 
@@ -151,7 +151,7 @@ photo7 = Photo.create!(
 
 photo8 = Photo.create!(
   name: "cookingTrunk",
-  url: "https://open-playful-public.s3.amazonaws.com/chef-preparing-vegetable-dish-on-tree-slab-1267320.jpg",
+  url: "https://open-playful-public.s3.amazonaws.com/baking-cheese-cooking-crust-315755.jpg",
   cafe_id: 1
 )
 
