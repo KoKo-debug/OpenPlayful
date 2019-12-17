@@ -6,7 +6,11 @@ import Ratings from './rating';
 class CafeShow extends React.Component {
   constructor(props) {
     super(props)
-
+    this.overviewRef = React.createRef();
+    this.photoRef = React.createRef();
+    this.menuRef = React.createRef();
+    this.reviewRef = React.createRef();
+    this.scrollToOverview = this.scrollToOverview.bind(this);
   }
 
 
@@ -14,6 +18,37 @@ class CafeShow extends React.Component {
   componentDidMount() {
     const {cafe} = this.props
     this.props.fetchCafe(this.props.match.params.cafeId)
+  }
+
+  scrollToOverview(ref) {
+    return e => {
+      if (ref) {
+        ref.current.scrollIntoView(true)
+      }
+    }
+  }
+
+
+  // scrollToOverview(ref) {
+  //   //65 is height of nav bar;
+  //   let y;
+  //   if (ref.current.id) { 
+  //     y = ref.current.getBoundingClientRect().top + window.pageYOffset - 65;
+  //   }
+
+  //   window.scrollTo(0, y)
+  // }
+
+  scrollToPhoto() {
+    this.photoRef.current.scrollIntoView(true)
+  }
+
+  scrollToMenu() {
+    this.menuRef.current.scrollIntoView(true)
+  }
+
+  scrollTOReview() {
+    this.reviewRef.current.scrollIntoView(true)
   }
 
   render() {
@@ -36,13 +71,13 @@ class CafeShow extends React.Component {
       }
     }
 
-    const photoLis = cafe.url.map(url =>
-      <a className="photo-gallery">
-        <img className="gallery-images" key={url} src={url} />
-      </a>
+    const photoLis = cafe.url.map((url, id) =>
+      <div className="photo-gallery">
+        <img className="gallery-images" key={id} src={url} width="100" height="300" />
+      </div>
     );
     
-    
+    debugger;
     return(
       <div>
 
@@ -51,11 +86,11 @@ class CafeShow extends React.Component {
         <section className="cafe-show-info-container">
           <div className="cafe-navBar">
             {/* if HashLink is okay */}
-            <HashLink 
-              to={`/cafes/${cafe.id}#overview`}
+            <div
+              onClick={this.scrollToOverview(this.overviewRef)}
               className="cafe-nav overview">
                 Overview
-            </HashLink>
+            </div>
 
             {/* For hashLink
 
@@ -87,7 +122,7 @@ class CafeShow extends React.Component {
             </HashLink>
           </div>
           
-          <div id="overview">
+          <div id="overview" ref={this.overviewRef}>
             <h1 className="cafe-header">
               {cafe.name}
             </h1>
