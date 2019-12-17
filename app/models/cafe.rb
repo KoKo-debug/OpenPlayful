@@ -24,8 +24,9 @@ class Cafe < ApplicationRecord
   validates :name, :animal, :cost, :address, :city, :country, :location_id, :phone_number, presence: true
   
 
+  belongs_to :location, optional: true
 
-  has_many :photos, class_name: "Photo"
-  belongs_to :location
+  has_many :photos
+
 
 end

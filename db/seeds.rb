@@ -6,10 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.delete_all
-Location.destroy_all
-Cafe.destroy_all
 Photo.destroy_all
+User.delete_all
+Cafe.destroy_all
+Location.destroy_all
+
+l1 = Location.create!(
+  name: "New York",
+  lat: 22.2444,
+  long: 13.1313
+  )
+  
+l2 = Location.create!(
+  name: "Florida",
+  lat: 55.2444,
+  long: 23.1313
+  )
+    
+l3 = Location.create!(
+  name: "California",
+  lat: 35.2444,
+  long: 24.1313
+  )
 
 c1 = Cafe.create!(
   name: "Joey's Kangaroo Cafe",
@@ -71,23 +89,6 @@ c4 = Cafe.create!(
   phone_number: "552-291-3585"
 )
 
-l1 = Location.create!(
-  name: "New York",
-  lat: 22.2444,
-  long: 13.1313
-  )
-  
-l2 = Location.create!(
-  name: "Florida",
-  lat: 55.2444,
-  long: 23.1313
-  )
-    
-l3 = Location.create!(
-  name: "California",
-  lat: 35.2444,
-  long: 24.1313
-  )
 
 user1 = User.create!(
   first_name: "tommy",
