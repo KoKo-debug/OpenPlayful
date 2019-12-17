@@ -54,3 +54,8 @@ textarea {
 body {
 	background-color: #f5f7f3;
 }
+
+
+html {
+	scroll-behavior: smooth;
+}
