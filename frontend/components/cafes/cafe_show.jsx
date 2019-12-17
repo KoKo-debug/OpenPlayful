@@ -183,7 +183,7 @@ class CafeShow extends React.Component {
               </div>
             </section>
             <section>
-              <div className="sort-by-dropdownn">
+              <div className="sort-by-dropdown">
                 <h1>Sort by</h1>
               </div>
               <div className="review-filters">
@@ -201,7 +201,7 @@ class CafeShow extends React.Component {
                     Num Reviews
                   </div>
                 </section>
-                <section>
+                <section className="review-info">
                   <section>
                       <Ratings average_rating={3} red={red} />
                       Dined someNum ago
@@ -212,9 +212,7 @@ class CafeShow extends React.Component {
                   <div>
                     <p>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga minima doloribus aperiam corporis animi aliquid, quisquam saepe ea incidunt minus reprehenderit molestiae accusamus, ipsum vel voluptas explicabo, ex voluptatem perspiciatis?
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus explicabo sapiente ab fugiat quo at mollitia architecto iste eveniet, molestiae autem quod molestias saepe deserunt reiciendis eius maxime temporibus dolorum?
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore sequi omnis explicabo veniam, id error adipisci amet fuga qui autem, culpa ea hic nostrum eum illo harum? Aut, praesentium maiores?
-                      ctetur adipisicing elit. Quo, eaque, ullam praesentium quasi tempora nobis omnis eum aspernatur vero veniam reprehenderit nam accusamus voluptatibus esse itaque dolores sapiente commodi minus!
+                      praesvoluptatibus esse itaque dolores sapiente commodi minus!
                     </p>
                   </div>
                 </section>

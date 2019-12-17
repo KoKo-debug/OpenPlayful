@@ -1,0 +1,25 @@
+.sort-by-dropdown {
+  padding: 20px;
+}
+
+.review-filters {
+  padding: 20px;
+}
+
+
+.reviewers {
+  display: flex;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding-right: 10px;
+}
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
