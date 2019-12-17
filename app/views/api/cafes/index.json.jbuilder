@@ -3,6 +3,6 @@
 
     json.extract! cafe, :id, :name, :animal, :description, :cost, :average_rating, :number_reviews, :location_id,:address, :city, :country, :phone_number
 
-    json.url cafe.photos.pluck(:url)
+    json.urls cafe.photos.pluck(:url)
   end
 end

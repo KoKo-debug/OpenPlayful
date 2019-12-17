@@ -5,6 +5,8 @@ import Modal from './modal/modal_container';
 import Splash from './splash/splash';
 import CafeIndexContainer from './cafes/cafe_index_container';
 import CafeShowContainer from './cafes/cafe_show_container';
+// import CafeShow1 from './cafes/cafe_show1';
+
 
 const App = () => (
     <div className="page">

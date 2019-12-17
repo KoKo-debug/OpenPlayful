@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id         :bigint           not null, primary key
+#  rating     :integer          not null
+#  body       :text             not null
+#  overall    :integer          not null
+#  food       :integer          not null
+#  service    :integer          not null
+#  value      :integer          not null
+#  ambience   :integer          not null
+#  user_id    :integer          not null
+#  cafe_id    :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  body: MyText
+  overall: 1
+  food: 1
+  service: 1
+  value: 1
+  ambience: 1
+  user_id: 1
+  cafe_id: 1
+
+two:
+  rating: 1
+  body: MyText
+  overall: 1
+  food: 1
+  service: 1
+  value: 1
+  ambience: 1
+  user_id: 1
+  cafe_id: 1

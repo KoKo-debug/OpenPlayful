@@ -34,5 +34,6 @@ class Cafe < ApplicationRecord
     foreign_key: :cafe_id,
     primary_key: :id
 
+  has_many :reviews
 
 end

@@ -1,0 +1,131 @@
+.right-side-container {
+  display: flex;
+  top: 290px;
+  width: 30%;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+}
+
+.show-reservation-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+
+}
+
+.reservation-header {
+  padding: 5px 0px;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(206, 204, 204);
+  text-align: center;
+}
+
+.party-size {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.size-dropdown {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid rgb(193, 193, 193);
+}
+
+#size {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 0px;
+  background-color: white;
+}
+
+.size-dropdown:hover {
+  border-bottom: 2px solid rgb(216, 50, 50);
+  margin-bottom: -1px;
+}
+
+
+#location-arrow-size {
+  position: absolute;
+  left: 90%;
+  top: -1px;
+  pointer-events: none;
+}
+
+#arrow {
+  max-width: 10px;
+}
+
+.date-time-container {
+  display: flex;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  width: 47%;
+}
+
+.date-dropdown {
+  padding-bottom: 3px;
+  position: relative;
+  border-bottom: 1px solid rgb(193, 193, 193);
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  width: 47%;
+  margin-left: 5px;
+}
+
+#date-pick {
+  width: 100%;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.date-dropdown:hover {
+  border-bottom: 2px solid rgb(216, 50, 50);
+  margin-bottom: -1px;
+}
+
+.time-dropdown {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid rgb(193, 193, 193);
+}
+
+#time {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 0px;
+  background-color: white;
+}
+
+.time-dropdown:hover {
+  border-bottom: 2px solid rgb(216, 50, 50);
+  margin-bottom: -1px;
+}
+
+.select-time-container {
+  padding-top: 15px;
+}
+
+.select-time-header {
+  font-size: 20px;
+}
+

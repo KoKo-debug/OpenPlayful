@@ -2,22 +2,23 @@ import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import Ratings from './rating';
+import CafeShowReservation from './cafe_show_reservation';
 
-class CafeShow extends React.Component {
+class CafeInfoShow extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.overviewRef = React.createRef();
     this.photoRef = React.createRef();
     this.menuRef = React.createRef();
     this.reviewRef = React.createRef();
-    // this.scrollToOverview = this.scrollToOverview.bind(this);
+    this.openPic = this.openPic.bind(this);
   }
 
 
 
   componentDidMount() {
-    const {cafe} = this.props
-    this.props.fetchCafe(this.props.match.params.cafeId)
+    const {cafe} = this.props;
+    this.props.fetchCafe(this.props.match.params.cafeId);
   }
 
   scrollToOverview(ref) {
@@ -60,6 +61,12 @@ class CafeShow extends React.Component {
     };
   }
 
+  openPic(url) {
+    // this.props.openModal(url).then();
+    
+    return null;
+  }
+
   render() {
 
     let red = true;
@@ -68,7 +75,7 @@ class CafeShow extends React.Component {
 
     const {cafe} = this.props;
 
-    const { cost, animal, average_rating, description, number_reviews, phone_number, url } = this.props.cafe
+    const { cost, animal, average_rating, description, number_reviews, phone_number, urls } = this.props.cafe
 
     const price = (cost) => {
       if (cost === 2) {
@@ -80,19 +87,21 @@ class CafeShow extends React.Component {
       }
     };
 
-    const photoLis = cafe.url.map((url, id) =>
+    const photoLis = cafe.urls.map((url, id) =>
       <div className="photo-gallery">
-        <img className="gallery-images" key={id} src={url} />
+        <img className="gallery-images" key={id} src={url}/>
       </div>
     );
-    let randomUrl = cafe.url[Math.floor(Math.random() * cafe.url.length)]
+
+    let randomUrl = cafe.urls[Math.floor(Math.random() * cafe.urls.length)]
     const bannerPhoto = <img className="bannerPhoto" src={randomUrl} />
     return(
       <div>
 
-        <section className="cafe-show-banner-container">
+      <section className="cafe-show-banner-container">
           {bannerPhoto}
         </section>
+        <div className="show-main-container">
         <section className="cafe-show-info-container">
           <div className="cafe-navBar">
             <div
@@ -131,6 +140,9 @@ class CafeShow extends React.Component {
               </div>
 
               <div className="num-reviews">
+                <div className="textBubble">
+                  <img id="text-Bubble" src={window.textBubble} alt="text bubble img" />
+                </div>
                 <div>
                   {number_reviews}
                 </div>
@@ -138,11 +150,21 @@ class CafeShow extends React.Component {
               </div>
 
               <div className="cost">
-                {price(cost)}
+                <div className="money">
+                  <img id="money-img" src={window.money} alt="money img" />
+                </div>
+                <div>
+                  {price(cost)}
+                </div>
               </div>
 
               <div className="animal">
-                {animal}
+                <div className="paw">
+                  <img id="paw-img" src={window.animal} alt="paw img" />
+                </div>
+                <div>
+                  {animal}
+                </div>
               </div>
             </div>
 
@@ -152,7 +174,7 @@ class CafeShow extends React.Component {
           </div>
 
           <div id="photos" ref={this.photoRef}>
-            <h1 className="photos-header">{url.length} Photos</h1>
+            <h1 className="photos-header">{urls.length} Photos</h1>
             <section className="photo-list">
               {photoLis}
             </section>
@@ -220,11 +242,13 @@ class CafeShow extends React.Component {
             </section>
             </div>
         </section>
+        <CafeShowReservation />
       </div>
+    </div>
     )
   }
 
 }
 
 
-export default CafeShow;
+export default CafeInfoShow;
