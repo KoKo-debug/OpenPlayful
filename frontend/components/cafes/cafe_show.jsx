@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Ratings from './rating';
 import CafeShowReservation from './cafe_show_reservation';
 
-class CafeInfoShow extends React.Component {
+class CafeShow extends React.Component {
   constructor(props) {
     super(props);
     this.overviewRef = React.createRef();
@@ -17,7 +17,6 @@ class CafeInfoShow extends React.Component {
 
 
   componentDidMount() {
-    const {cafe} = this.props;
     this.props.fetchCafe(this.props.match.params.cafeId);
   }
 
@@ -75,7 +74,7 @@ class CafeInfoShow extends React.Component {
 
     const {cafe} = this.props;
 
-    const { cost, animal, average_rating, description, number_reviews, phone_number, urls } = this.props.cafe
+    const { cost, animal, average_rating, description, number_reviews, phone_number, urls } = this.props.cafe;
 
     const price = (cost) => {
       if (cost === 2) {
@@ -88,16 +87,16 @@ class CafeInfoShow extends React.Component {
     };
 
     const photoLis = cafe.urls.map((url, id) =>
-      <div className="photo-gallery">
-        <img className="gallery-images" key={id} src={url}/>
+      <div className="photo-gallery" key={id}>
+        <img className="gallery-images" key={url} src={url}/>
       </div>
     );
 
     let randomUrl = cafe.urls[Math.floor(Math.random() * cafe.urls.length)]
     const bannerPhoto = <img className="bannerPhoto" src={randomUrl} />
     return(
-      <div>
-
+      <div className="show-page">
+        {/* <div className="background"></div> */}
       <section className="cafe-show-banner-container">
           {bannerPhoto}
         </section>
@@ -242,7 +241,7 @@ class CafeInfoShow extends React.Component {
             </section>
             </div>
         </section>
-        <CafeShowReservation />
+        <CafeShowReservation cafe={cafe} />
       </div>
     </div>
     )
@@ -251,4 +250,4 @@ class CafeInfoShow extends React.Component {
 }
 
 
-export default CafeInfoShow;
+export default CafeShow;

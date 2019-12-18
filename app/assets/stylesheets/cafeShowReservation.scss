@@ -1,17 +1,19 @@
 .right-side-container {
   display: flex;
-  top: 290px;
   width: 30%;
   flex-direction: column;
   background-color: white;
-  padding: 10px;
 }
 
 .show-reservation-container {
   display: flex;
   flex-direction: column;
   background-color: white;
-
+  position: sticky;
+  padding: 10px;
+  top: 0;
+  z-index: 3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .reservation-header {
@@ -42,11 +44,17 @@
   cursor: pointer;
   padding: 5px 0px;
   background-color: white;
+  padding-left: 30px;
 }
 
 .size-dropdown:hover {
   border-bottom: 2px solid rgb(216, 50, 50);
   margin-bottom: -1px;
+}
+
+.for-num {
+  position: absolute;
+  top: 1px;
 }
 
 
@@ -129,3 +137,33 @@
   font-size: 20px;
 }
 
+
+
+.timeSlot {
+  background-color: rgb(222, 54, 54);
+  border: 1px solid rgb(222, 54, 54);
+  border-radius: 3px;
+  color: rgb(244, 236, 236);
+  font-size: 14px;
+  padding: 5px 15px;
+  margin: 3px;
+}
+
+.findTableButton {
+  background-color: rgb(222, 54, 54);
+  border: 1px solid rgb(222, 54, 54);
+  border-radius: 3px;
+  color: white;
+  width: 100%;
+  padding: 13px 0px;
+}
+
+.res-booked {
+  margin: 20px 0px;
+  display: flex;
+}
+
+
+#graphIcon {
+  max-width: 20px;
+}

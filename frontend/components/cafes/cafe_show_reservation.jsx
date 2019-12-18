@@ -1,14 +1,95 @@
 import React from 'react';
+import Map from './map';
 
 class CafeShowReservation extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      timeAMPM: ""
+      timeAMPM: "",
+      clickedOn: false,
     };
-
+    
+    this.handleClickOn = this.handleClickOn.bind(this);
   }
 
+
+  timeSlots() {
+
+    const {cafe} = this.props;
+
+    return (
+      <>
+
+        <input
+          type="submit"
+          className="timeSlot"
+          key={1}
+          // onClick={}
+          value={"1:30 PM"}
+        />
+
+        <input
+          type="submit"
+          className="timeSlot"
+          key={2}
+          // onClick={}
+          value={"1:45 PM"}
+        />
+
+        <input
+          type="submit"
+          className="timeSlot"
+          key={3}
+          // onClick={}
+          value={"2:00 PM"}
+        />
+
+        <input
+          type="submit"
+          className="timeSlot"
+          key={4}
+          // onClick={}
+          value={"2:15 PM"}
+        />
+
+        <input
+          type="submit"
+          className="timeSlot"
+          key={5}
+          // onClick={}
+          value={"2:30 PM"}
+        />
+      </>
+    )
+  }
+
+  handleClickOn() {
+    this.setState({
+      clickedOn: true
+    })
+  }
+
+  findTable(e) {
+    if (this.state.clickedOn === false) {
+      return(
+        <button onClick={() => this.handleClickOn()} className="findTableButton">
+          Find a Table
+        </button>
+      )
+    } else {
+      return(
+        <>
+          <h1 className="select-time-header">
+            Select a time:
+          </h1>
+          <div>
+            {this.timeSlots()}
+          </div>
+        </>
+      )
+    }
+
+  }  
 
   populateTime() {
     let times = [];
@@ -51,18 +132,19 @@ class CafeShowReservation extends React.Component {
   render() {
 
     let partySizeLis = this.populateSize().map(size =>
-      <option value={size} key={size}>For {size}</option>
+      <option value={size} key={size}>{size}</option>
     );
 
     let timeLis = this.populateTime().map(time =>
       <option value={time.time} key={time.time}>{time.time}</option>
     );
 
+    const {cafe} = this.props
     return(
       <div className="right-side-container">
 
         <div className="show-reservation-container">
-          <h1 class="reservation-header">
+          <h1 className="reservation-header">
             Make a reservation
           </h1>
 
@@ -70,7 +152,10 @@ class CafeShowReservation extends React.Component {
             <div className="party-size">
               <h2>Party Size</h2>
               <div className="size-dropdown">
-                <select id="size">
+                <div className="for-num">
+                  For
+                </div>
+                <select defaultValue="2" id="size">
                   {partySizeLis}
                 </select>
                 <div id="location-arrow-size">
@@ -109,22 +194,21 @@ class CafeShowReservation extends React.Component {
           </section>
 
           <section className="select-time-container">
-            <h1 className="select-time-header">
-              Select a time:
-            </h1>
+            {this.findTable()}
+          </section>
+
+          <section className="res-booked">
             <div>
-              time slot buttons
+              <img id="graphIcon" src={window.graphIcon} alt="graph icon"/>
+            </div>
+            <div>
+              Booked 0 times today
             </div>
           </section>
-
-          <section>
-            Booked this many times today
-          </section>
-
-          <section>
-            You're in luck! We still have # timeslots left
-          </section>
         </div>
+        <section className="map-container">
+          <Map cafe={cafe}/>
+        </section>
       </div>
     )
   }

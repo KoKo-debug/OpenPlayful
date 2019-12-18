@@ -4,6 +4,9 @@
     <title>OpenPlayful</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>
+    <%= stylesheet_link_tag 'application', media: 'all' %> <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Overpass&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -24,6 +27,7 @@
       window.knifeFork = "<%= image_url("knifeFork.png") %>"
       window.animal ="<%= image_url("animal.png") %>"
       window.arrow ="<%= image_url("down-arrow.png") %>"
+      window.graphIcon ="<%= image_url("graphIcon.png") %>"
     </script>
   </head>
   <body>
