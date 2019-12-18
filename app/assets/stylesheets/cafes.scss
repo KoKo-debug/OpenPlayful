@@ -2,13 +2,58 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.main-index-container {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.f-price-container {
+  border-bottom: 1px solid rgb(191, 191, 191);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+.price-buttons {
+  display: flex;
+}
+
+.price-button {
+  font-size: 17px;
+  text-align: center;
+  padding: 5px;
+  width: 50px;
+  border: 1px solid rgb(191, 191, 191);
+  cursor: pointer;
+}
+
+.f-location-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgb(191, 191, 191);
+}
+
+.f-animal-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgb(191, 191, 191);
+}
 
 .outer-container {
-  position: absolute;
+  position: relative;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  top: 65px;
   width: 40%;
 }
 

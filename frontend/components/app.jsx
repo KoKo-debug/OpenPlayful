@@ -5,18 +5,20 @@ import Modal from './modal/modal_container';
 import Splash from './splash/splash';
 import CafeIndexContainer from './cafes/cafe_index_container';
 import CafeShowContainer from './cafes/cafe_show_container';
-// import CafeShow1 from './cafes/cafe_show1';
+import Footer from "./footer";
 
 
 const App = () => (
     <div className="page">
       <Modal />
       <TopBar />
+
       <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/cafes" component={CafeIndexContainer} />
         <Route path="/cafes/:cafeId" component={CafeShowContainer} />
-      </Switch>       
+      </Switch>
+      <Footer />       
     </div>
 );
 
