@@ -11,15 +11,79 @@
   display: flex;
 }
 
+.review-info {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(206, 204, 204);
+}
+
+
 .user-info {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  min-width: 100px;
   padding-right: 10px;
+  text-align: center;
 }
 
-.review-info {
+
+.review-main-info {
   display: flex;
   flex-direction: column;
-  width: 80%;
+}
+
+.reviewer-name {
+  display: block;
+  margin-top: 4px;
+  color: rgb(80, 77, 77);
+}
+
+.reviewer-location{
+  display: block;
+  color: rgb(176, 168, 168);
+  font-size: 13px;
+}
+
+
+.initials-circle {
+  position: relative;
+  width: 55px;
+  height: 55px;
+}
+
+.initials {
+  position: absolute;
+  color: white;
+  z-index: 1;
+  top: 15px;
+  left: 40px;
+}
+
+.circle {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 24px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+}
+
+.four-ratings {
+  display: flex;
+}
+
+.four-rating-title {
+  margin-right: 5px;
+}
+
+.four-score {
+  color: rgb(211, 62, 62);
+  margin-right: 5px;
+}
+
+.dot {
+  margin-top: 3px;
+  margin-right: 5px;
 }

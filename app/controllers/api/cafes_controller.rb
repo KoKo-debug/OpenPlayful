@@ -9,9 +9,12 @@ class Api::CafesController < ApplicationController
 
 
   def show
-    @cafe = Cafe.find_by(id: params[:id])
-    @photos = @cafe.photos.pluck(:url)
-    
+    @cafe = Cafe.includes(:photos, :location, :users).find_by(id: params[:id])
+    # @photos = @cafe.photos.pluck(:url)
+    # @location = @cafe.location
+    # @reviews = @cafe.reviews
+    # @users = @cafe.users
+
     if @cafe
       render :show
     else

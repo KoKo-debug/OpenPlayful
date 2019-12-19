@@ -206,7 +206,7 @@ class CafeShowReservation extends React.Component {
             </div>
           </section>
         </div>
-        <section className="map-container">
+        <section>
           <Map cafe={cafe} singleCafe={true} cafes={cafes} fetchCafe={fetchCafe}/>
         </section>
       </div>

@@ -3,6 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import Ratings from './rating';
 import CafeShowReservation from './cafe_show_reservation';
+import Review from '../review/review';
 
 class CafeShow extends React.Component {
   constructor(props) {
@@ -14,17 +15,20 @@ class CafeShow extends React.Component {
     this.openPic = this.openPic.bind(this);
   }
 
+  
+
 
 
   componentDidMount() {
     this.props.fetchCafe(this.props.match.params.cafeId);
   }
 
+
   scrollToOverview(ref) {
     return e => {
       let y;
       if (ref.current.id) { 
-        y = ref.current.getBoundingClientRect().top + window.pageYOffset - 58;
+        y = ref.current.getBoundingClientRect().top + window.pageYOffset - 49;
       }
       window.scrollTo(0, y);
     };
@@ -67,14 +71,15 @@ class CafeShow extends React.Component {
   }
 
   render() {
-
     let red = true;
 
     if (!this.props.cafe) return null;
 
     const {cafe, fetchCafe} = this.props;
 
-    const { cost, animal, average_rating, description, number_reviews, phone_number, urls } = this.props.cafe;
+    const { cost, animal, average_rating, description, number_reviews, phone_number, urls, users } = this.props.cafe;
+      
+    const reviews = Object.values(this.props.cafe.reviews);
 
     const price = (cost) => {
       if (cost === 2) {
@@ -91,6 +96,7 @@ class CafeShow extends React.Component {
         <img className="gallery-images" key={url} src={url}/>
       </div>
     );
+
 
     let randomUrl = cafe.urls[Math.floor(Math.random() * cafe.urls.length)]
     const bannerPhoto = <img className="bannerPhoto" src={randomUrl} />
@@ -190,7 +196,7 @@ class CafeShow extends React.Component {
 
           <div id="reviews" ref={this.reviewRef}>
             <h1 className="review-header">
-              What {number_reviews} People Are Saying
+              What {reviews.length} People Are Saying
             </h1>
 
             <section>
@@ -211,32 +217,7 @@ class CafeShow extends React.Component {
                 <h1>Filters</h1>
               </div>
               <section className="reviewers" >
-                <section className="user-info">
-                  <div>
-                    user icon
-                  </div>
-                  <div>
-                    primary location
-                  </div>
-                  <div>
-                    Num Reviews
-                  </div>
-                </section>
-                <section className="review-info">
-                  <section>
-                      <Ratings average_rating={3} red={red} />
-                      Dined someNum ago
-                  </section>
-                  <div>
-                    Overall * Food * Service * Ambience *
-                  </div>
-                  <div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga minima doloribus aperiam corporis animi aliquid, quisquam saepe ea incidunt minus reprehenderit molestiae accusamus, ipsum vel voluptas explicabo, ex voluptatem perspiciatis?
-                      praesvoluptatibus esse itaque dolores sapiente commodi minus!
-                    </p>
-                  </div>
-                </section>
+                <Review reviews={reviews}/>
               </section>
             </section>
             </div>

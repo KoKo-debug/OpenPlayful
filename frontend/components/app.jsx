@@ -16,7 +16,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/cafes" component={CafeIndexContainer} />
-        <Route path="/cafes/:cafeId" component={CafeShowContainer} />
+        <Route exact path="/cafes/:cafeId" component={CafeShowContainer} />
       </Switch>
       <Footer />       
     </div>

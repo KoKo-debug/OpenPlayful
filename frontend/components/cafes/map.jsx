@@ -1,25 +1,24 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
-
-
-const MapOptions = {
-  center: { lat: 40.7128, lng: -74.0060 },
-  zoom: 10
-};
 
 class Map extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
+  
 
 
   componentDidMount() {
+    const MapOptions = {
+      center: { lat: this.props.cafe.lat, lng: this.props.cafe.long },
+      zoom: 10
+    };
     const map = this.refs.map;
     this.map = new google.maps.Map(map, MapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleClick);
     if (this.props.singleCafe) {
-      this.props.fetchCafe(this.props.cafeId);
+      this.props.fetchCafe(this.props.cafe.id);
     } else {
       this.registerListeners();
       this.MarkerManager.updateMarkers(this.props.cafes);
@@ -28,8 +27,8 @@ class Map extends React.Component {
 
   componentDidUpdate() {
     if (this.props.singleCafe) {
-      const targetCafeKey = Object.keys(this.props.cafes)[0];
-      const targetCafe = this.props.cafes[targetCafeKey];
+      // const targetCafeKey = Object.keys(this.props.cafe);
+      const targetCafe = this.props.cafe;
       this.MarkerManager.updateMarkers([targetCafe]);
     } else {
       this.MarkerManager.updateMarkers(this.props.cafes);
@@ -52,7 +51,7 @@ class Map extends React.Component {
   }
 
   handleMarkerClick(cafe) {
-    this.props.history.push(`cafes/${cafe.id}`)
+    this.props.history.push(`cafes/${cafe.id}`);
   }
 
   handleClick(coords) {
@@ -64,17 +63,18 @@ class Map extends React.Component {
 
   render() {
     const {cafe} = this.props;
-    return (
-      <section>
+      return (
+        <section className="map-container">
         <div className="map" ref="map" >
           Map
         </div>
-        <span>
-          <img src="" alt=""/>
-          <h3>{cafe.address} {cafe.city}</h3>
+        <span className="map-address">
+          <img className="location-icon-img" src={window.locationIcon} alt="location icon"/>
+          <Link className="address-link" to= {`/cafes/${cafe.id}`}>{cafe.address} {cafe.city}, {cafe.location.name}</Link>
         </span>
       </section>
-    )
+      )
+    
   }
 }
 

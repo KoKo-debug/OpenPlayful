@@ -1,7 +1,7 @@
 class MarkerManager {
   constructor(map, handleClick) {
-    this.map = map
-    this.handleClick = handleClick
+    this.map = map;
+    this.handleClick = handleClick;
     this.markers = {};
   }
 
@@ -11,11 +11,10 @@ class MarkerManager {
 
     cafes
       .filter(cafe => !this.markers[cafe.id])
-      .forEach(newCafe => this.createMarkerFromCafe(newCafe, this.handleClick))
-
+      .forEach(newCafe => this.createMarkerFromCafe(newCafe, this.handleClick));
     Object.keys(this.markers)
       .filter(cafeId => !cafesObj[cafeId])
-      .forEach(cafeId => this.removeMarker(this.markers[cafeId]))
+      .forEach(cafeId => this.removeMarker(this.markers[cafeId]));
   }
 
   createMarkerFromCafe(cafe) {

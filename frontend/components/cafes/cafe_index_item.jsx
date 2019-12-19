@@ -77,10 +77,22 @@ class CafeIndexItem extends React.Component {
     )
   }
 
-  render() {
 
+  render() {
+    
     const { cafe } = this.props
-    const {name, animal, city} = this.props.cafe
+    const {name, animal, city, reviews} = this.props.cafe
+    let Ratings = [];
+    let totalRating = 0;
+    Object.values(reviews).forEach(review => {
+      Ratings.push(review.rating)
+    })
+
+    Ratings.forEach(rating => {
+      totalRating += rating
+    })
+
+    let avgRating = (totalRating / Object.values(reviews).length)
 
     let red = false;
     return (
@@ -100,7 +112,7 @@ class CafeIndexItem extends React.Component {
 
           <span className="ratings-row">
             <div className="index-rating">
-              <Ratings average_rating={5} red={red} /> 
+              <Ratings average_rating={avgRating} red={red} /> 
             </div>
             <div className="index-num-reviews">
               {this.numReviews()}

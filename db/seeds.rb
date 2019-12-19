@@ -39,7 +39,7 @@ c1 = Cafe.create!(
   city: "New York",
   country: "United States",
   lat: 40.7128,
-  long: 74.0060,
+  long: -74.0060,
   location_id: 1,
   phone_number: "232-131-1255"
 )
@@ -54,7 +54,7 @@ c2 = Cafe.create!(
   city: "Orlando",
   country: "United States",
   lat: 27.6648,
-  long: 81.5158,
+  long: -81.5158,
   location_id: 2,
   phone_number: "538-131-1455"
 )
@@ -68,8 +68,8 @@ c3 = Cafe.create!(
   address: "19 Monkey Dr.",
   city: "Long Beach",
   country: "United States",
-  lat: 36.7783,
-  long: 119.4179,
+  lat: 33.7703,
+  long: -118.1939,
   location_id: 3,
   phone_number: "992-581-2155"
 )
@@ -84,7 +84,7 @@ c4 = Cafe.create!(
   city: "New York",
   country: "United States",
   lat: 42.5128,
-  long: 73.7560,
+  long: -73.7560,
   location_id: 1,
   phone_number: "552-291-3585"
 )
@@ -223,31 +223,20 @@ photo18 = Photo.create!(
   cafe_id: 1
 )
 
+
 review1 = Review.create!(
-  rating: 4,
-  body: "Great food, had a good time.",
+  rating: 5,
+  body: "This place was nearby and I decided to check it out. The desserts must be sprinkled with crack because I just craved for more and more. The service was good for the most part but the waiter was a bit tired. It could have been perfect, but the floors were a little sticky..",
   overall: 4,
   food: 5,
   service: 3,
-  value: 3,
+  value: 2,
   ambience: 4,
   user_id: 1,
   cafe_id: 1
 )
 
-review1 = Review.create!(
-  rating: 4,
-  body: "Great food, had a good time.",
-  overall: 4,
-  food: 5,
-  service: 3,
-  value: 3,
-  ambience: 4,
-  user_id: 1,
-  cafe_id: 1
-)
-
-review1 = Review.create!(
+review2 = Review.create!(
   rating: 2,
   body: "Had a rough time. Food was okay but the place was very smelly",
   overall: 2,
@@ -259,9 +248,9 @@ review1 = Review.create!(
   cafe_id: 1
 )
 
-review1 = Review.create!(
-  rating: 5,
-  body: "I will come back again, it was a great experience.",
+review3 = Review.create!(
+  rating: 3,
+  body: "This is one of my favorite places. I found the ambiance to be very charming. Try out the huge selection of incredible appetizers. After my meal, I was knocked into a food coma. I'm definitely coming back for more!",
   overall: 5,
   food: 3,
   service: 4,
@@ -269,4 +258,52 @@ review1 = Review.create!(
   ambience: 4,
   user_id: 2,
   cafe_id: 1
+)
+
+review4 = Review.create!(
+  rating: 3,
+  body: "I'm torn about this place. The steak was a little dry. The waitress was nothing remarkable. I had a satisfactory experience and will have to try it again.",
+  overall: 2,
+  food: 3,
+  service: 3,
+  value: 4,
+  ambience: 1,
+  user_id: 2,
+  cafe_id: 2
+)
+
+review4 = Review.create!(
+  rating: 3,
+  body: "I'm torn about this place. The steak was a little dry. The waitress was nothing remarkable. I had a satisfactory experience and will have to try it again.",
+  overall: 2,
+  food: 3,
+  service: 3,
+  value: 4,
+  ambience: 1,
+  user_id: 2,
+  cafe_id: 3
+)
+
+review4 = Review.create!(
+  rating:4,
+  body: "Yummers! Everything was just so yummy. Try out the huge selection of incredible appetizers. The decor was unique and incredible. The food was flavorful, savory, and succulent. This is definitely a spot I'll be frequenting.",
+  overall: 2,
+  food: 4,
+  service: 5,
+  value: 5,
+  ambience: 5,
+  user_id: 2,
+  cafe_id: 4
+)
+
+review4 = Review.create!(
+  rating: 2,
+  body: "I really wanted to like this place. The chicken was undercooked. This place is very dumpy and in a serious need of a fresh paint job. I felt the prices were too high given the quality of the food. 2 stars.",
+  overall: 2,
+  food: 3,
+  service: 2,
+  value: 1,
+  ambience: 1,
+  user_id: 1,
+  cafe_id: 2
 )

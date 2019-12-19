@@ -8,14 +8,14 @@ import { fetchAllCafes } from '../../actions/cafe_actions';
 const msp = (state, ownProps) => {
   return {
     cafes: Object.values(state.entities.cafes)
-  }
+  };
 };
 
 
 const mdp = dispatch => {
   return {
     fetchAllCafes: () => dispatch(fetchAllCafes())
-  }
-}
+  };
+};
 
 export default connect(msp, mdp)(CafeIndex);
