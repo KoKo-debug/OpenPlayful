@@ -139,7 +139,7 @@ class CafeShowReservation extends React.Component {
       <option value={time.time} key={time.time}>{time.time}</option>
     );
 
-    const {cafe} = this.props
+    const {cafe, cafes, fetchCafe} = this.props
     return(
       <div className="right-side-container">
 
@@ -207,10 +207,10 @@ class CafeShowReservation extends React.Component {
           </section>
         </div>
         <section className="map-container">
-          <Map cafe={cafe}/>
+          <Map cafe={cafe} singleCafe={true} cafes={cafes} fetchCafe={fetchCafe}/>
         </section>
       </div>
-    )
+    ) 
   }
 
 }

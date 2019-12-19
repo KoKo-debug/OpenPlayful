@@ -33,7 +33,11 @@ class Filter extends React.Component {
 
       <div>
         <section>
-          <input type="checkbox" onClick={this.handleClick}/>
+          <button
+            onClick={() => this.handleClick()}
+          >
+
+          </button>
         </section>
 
       </div>

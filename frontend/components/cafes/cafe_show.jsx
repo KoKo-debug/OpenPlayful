@@ -72,7 +72,7 @@ class CafeShow extends React.Component {
 
     if (!this.props.cafe) return null;
 
-    const {cafe} = this.props;
+    const {cafe, fetchCafe} = this.props;
 
     const { cost, animal, average_rating, description, number_reviews, phone_number, urls } = this.props.cafe;
 
@@ -241,7 +241,7 @@ class CafeShow extends React.Component {
             </section>
             </div>
         </section>
-        <CafeShowReservation cafe={cafe} />
+        <CafeShowReservation cafe={cafe}  fetchCafe={ fetchCafe }/>
       </div>
     </div>
     )
