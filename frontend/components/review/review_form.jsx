@@ -6,15 +6,15 @@ class ReviewForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          rating: 0,
-          overall: 0,
-          food: 0,
-          service: 0,
-          ambience: 0,
-          value: 0,
+          rating: 1,
+          overall: 1,
+          food: 1,
+          service: 1,
+          ambience: 1,
+          value: 1,
           body: ""
 
-        }
+        };
 
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +23,8 @@ class ReviewForm extends React.Component {
 
     update(field) {
       return e => {
-        this.setState({[field]: e.target.value})
-      }
+        this.setState({[field]: e.target.value});
+      };
     }
 
 
@@ -34,9 +34,9 @@ class ReviewForm extends React.Component {
         const review = merge({},this.state, {
           user_id: this.props.currentUser.id,
           cafe_id: this.props.cafe.id,
-        })
+        });
         
-      return this.props.createReview(review)
+      return this.props.createReview(review);
     }
 
 
