@@ -115,14 +115,14 @@ class CafeIndexItem extends React.Component {
     return (
       <div className="cafe-item-container">
         <div className="cafe-picture">
-          <Link target="_blank" to={`/cafes/${this.props.cafe.id}`}>
+          <Link to={`/cafes/${this.props.cafe.id}`}>
             <img id="cafeMainPic" src={cafe.urls[0]} alt="cafe picture"/>
           </Link>
         </div>
 
         <section className="index-info">
           <span>
-            <Link target="_blank" to={`/cafes/${cafe.id}`} className="cafe-index-name">
+            <Link to={`/cafes/${cafe.id}`} className="cafe-index-name">
               {name}  
             </Link>
           </span>

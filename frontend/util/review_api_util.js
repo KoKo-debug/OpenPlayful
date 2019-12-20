@@ -3,8 +3,8 @@ export const createReview = review => {
     method: 'POST',
     url: `api/cafes/${review.cafe_id}/reviews`,
     data: { review } 
-  })
-}
+  });
+};
 
 
 export const updateReview = review => {
@@ -12,12 +12,12 @@ export const updateReview = review => {
     method: 'PATCH',
     url: `api/cafes/${review.cafe_id}/reviews/${review.id}`,
     data: { review }
-  })
-}
+  });
+};
 
 export const deleteReview = review => {
   return $ajax({
     method: 'DELETE',
     url: `api/cafes/${review.cafe_id}/reviews/${cafe.id}`
-  })
-}
+  });
+};

@@ -8,16 +8,16 @@ const reviewsReducer = (state = {}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_REVIEW:
-      return merge({}, state, {[action.review.id]: action.review})
+      return merge({}, state, {[action.review.id]: action.review});
     case REMOVE_REVIEW:
       newState = merge({}, state);
       delete newState[action.reviewId];
       return newState;
     case RECEIVE_CAFE:
-      return merge({}, action.reviews)
+      return merge({}, action.reviews);
     default:
       return state;
   }
-}
+};
 
 export default reviewsReducer;

@@ -12,8 +12,7 @@ class ReviewForm extends React.Component {
           service: 1,
           ambience: 1,
           value: 1,
-          body: ""
-
+          body: "",
         };
 
 
@@ -29,6 +28,10 @@ class ReviewForm extends React.Component {
 
 
     handleSubmit(e) {
+
+      let reviews = [];
+      reviews.push(this.props.cafe.reviews);
+
         e.preventDefault();
         const { currentUser, cafe } = this.props;
         const review = merge({},this.state, {
