@@ -31,7 +31,6 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const { currentUser, cafe } = this.props;
-        debugger;
         const review = merge({},this.state, {
           user_id: this.props.currentUser.id,
           cafe_id: this.props.cafe.id,
