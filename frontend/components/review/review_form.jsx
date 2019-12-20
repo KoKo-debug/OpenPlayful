@@ -39,19 +39,19 @@ class ReviewForm extends React.Component {
                                 Overall
                             </div>
                             <span>
-                                <div>
+                                <div className="star">
                                     <img className="O-ss1" src={window.singleStar} alt="single star"/>
                                 </div>
-                                <div>
+                                <div className="star">
                                     <img className="O-ss2" src={window.singleStar} alt="single star"/>
                                 </div>
-                                <div>
+                                <div className="star">
                                     <img className="O-ss3" src={window.singleStar} alt="single star"/>
                                 </div>
-                                <div>
+                                <div className="star">
                                     <img className="O-ss4" src={window.singleStar} alt="single star"/>
                                 </div>
-                                <div>
+                                <div className="star">
                                     <img className="O-ss5" src={window.singleStar} alt="single star"/>
                                 </div>
                             </span>
