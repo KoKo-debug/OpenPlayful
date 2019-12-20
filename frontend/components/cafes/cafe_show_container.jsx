@@ -10,7 +10,7 @@ const msp = (state, ownProps) => {
   return{
     cafe: state.entities.cafes[ownProps.match.params.cafeId],
     cafes: state.entities.cafes,
-
+    reviews: state.entities.reviews
   };
 
 };

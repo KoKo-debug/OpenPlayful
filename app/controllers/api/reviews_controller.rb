@@ -4,7 +4,9 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save!
-      render "api/reviews/show"
+      @cafe = Cafe.includes(:reviews).find_by(id: @review.cafe_id)
+      
+      render "api/cafes/show"
     else
       render json: @review.errors.full_messages, status: 422
     end  

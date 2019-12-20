@@ -16,6 +16,9 @@ class CafeShow extends React.Component {
     this.menuRef = React.createRef();
     this.reviewRef = React.createRef();
     this.openPic = this.openPic.bind(this);
+    this.state = {
+      reviews: Object.values(this.props.reviews)
+    };
   }
 
   
@@ -82,7 +85,7 @@ class CafeShow extends React.Component {
 
     const { cost, animal, average_rating, description, number_reviews, phone_number, urls, users } = this.props.cafe;
       
-    const reviews = Object.values(this.props.cafe.reviews);
+    const reviews = Object.values(this.props.reviews);
 
     let ratings = [];
     let totalRating = 0;

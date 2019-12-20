@@ -8,10 +8,10 @@ const receiveCafes = (cafes) => ({
   cafes
 });
 
-const receiveCafe = (cafe) => ({
+export const receiveCafe = (cafe) => ({
   type: RECEIVE_CAFE,
   cafe
-})
+});
 
 
 export const fetchAllCafes = () => dispatch => (

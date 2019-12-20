@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createReview } from '../../actions/review_actions';
+import { createTheReview } from '../../actions/review_actions';
 
 
 import ReviewForm from './review_form';
@@ -14,7 +14,7 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+  createReview: review => dispatch(createTheReview(review))
 });
 
 export default connect(msp, mdp)(ReviewForm);
