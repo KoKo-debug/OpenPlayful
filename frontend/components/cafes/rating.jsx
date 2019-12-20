@@ -3,7 +3,6 @@ import React from "react";
 
 
 const rating = ({average_rating, red}) => {
-
   const starTotal = 5;
   let starPercentage;
   let starPercentageRounded;

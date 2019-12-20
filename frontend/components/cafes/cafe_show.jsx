@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Ratings from './rating';
 import CafeShowReservation from './cafe_show_reservation';
 import Review from '../review/review';
+import ReviewForm from '../review/review_form';
 
 class CafeShow extends React.Component {
   constructor(props) {
@@ -81,6 +82,20 @@ class CafeShow extends React.Component {
       
     const reviews = Object.values(this.props.cafe.reviews);
 
+    let ratings = [];
+    let totalRating = 0;
+
+    reviews.forEach(review => {
+      ratings.push(review.rating);
+    });
+
+    ratings.forEach(rating => {
+      totalRating += rating;
+    });
+
+    let avgRating = (totalRating / reviews.length);
+
+
     const price = (cost) => {
       if (cost === 2) {
         return "$30 and under";
@@ -100,6 +115,7 @@ class CafeShow extends React.Component {
 
     let randomUrl = cafe.urls[Math.floor(Math.random() * cafe.urls.length)]
     const bannerPhoto = <img className="bannerPhoto" src={randomUrl} />
+    
     return(
       <div className="show-page">
         {/* <div className="background"></div> */}
@@ -138,9 +154,9 @@ class CafeShow extends React.Component {
 
             <div className="cafe-details">
               <div className="rating">
-                  <Ratings average_rating={3} red={red} /> 
+                  <Ratings average_rating={avgRating} red={red} /> 
                   <h3 className="average">
-                    {3.2}
+                    {avgRating.toFixed(1)}
                   </h3>
               </div>
 
@@ -205,7 +221,7 @@ class CafeShow extends React.Component {
                   Overall ratings and reviews
                 </h2>
                 <h3>
-                  Reviews can only be made by diners who have eaten at this restaurant.
+                  Reviews can only be made by users. Please make an account before making a review.
                 </h3>
               </div>
             </section>
@@ -220,6 +236,7 @@ class CafeShow extends React.Component {
                 <Review reviews={reviews}/>
               </section>
             </section>
+            <ReviewForm />
             </div>
         </section>
         <CafeShowReservation cafe={cafe}  fetchCafe={ fetchCafe }/>

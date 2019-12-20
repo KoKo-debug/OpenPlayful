@@ -82,13 +82,14 @@ class CafeIndexItem extends React.Component {
     
     const { cafe } = this.props
     const {name, animal, city, reviews} = this.props.cafe
-    let Ratings = [];
+    let ratings = [];
     let totalRating = 0;
+
     Object.values(reviews).forEach(review => {
-      Ratings.push(review.rating)
+      ratings.push(review.rating)
     })
 
-    Ratings.forEach(rating => {
+    ratings.forEach(rating => {
       totalRating += rating
     })
 
