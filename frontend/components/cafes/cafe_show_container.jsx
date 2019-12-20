@@ -9,7 +9,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
   return{
     cafe: state.entities.cafes[ownProps.match.params.cafeId],
-    cafes: state.entities.cafes
+    cafes: state.entities.cafes,
+
   };
 
 };

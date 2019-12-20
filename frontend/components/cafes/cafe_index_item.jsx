@@ -77,11 +77,9 @@ class CafeIndexItem extends React.Component {
     )
   }
 
+  avgRating() {
+    const {reviews} = this.props.cafe
 
-  render() {
-    
-    const { cafe } = this.props
-    const {name, animal, city, reviews} = this.props.cafe
     let ratings = [];
     let totalRating = 0;
 
@@ -94,6 +92,24 @@ class CafeIndexItem extends React.Component {
     })
 
     let avgRating = (totalRating / Object.values(reviews).length)
+
+    return(
+      avgRating
+    )
+
+  }
+
+
+  render() {
+    
+    const { cafe } = this.props
+    const {name, animal, city, reviews} = this.props.cafe
+   
+    let avgRating;
+
+    if (reviews) {
+      avgRating = this.avgRating()
+    }
 
     let red = false;
     return (

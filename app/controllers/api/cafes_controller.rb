@@ -1,5 +1,5 @@
 class Api::CafesController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
 
   def index
     # for now, all cafes (filter later)
@@ -9,14 +9,10 @@ class Api::CafesController < ApplicationController
 
 
   def show
-    @cafe = Cafe.includes(:photos, :location, :users).find_by(id: params[:id])
-    # @photos = @cafe.photos.pluck(:url)
-    # @location = @cafe.location
-    # @reviews = @cafe.reviews
-    # @users = @cafe.users
+    @cafe = Cafe.includes(:photos, :location, :users, :reviews).find_by(id: params[:id])
 
     if @cafe
-      render :show
+      render "api/cafes/show"
     else
       render json: ["This cafe is not available"], status: 404
     end

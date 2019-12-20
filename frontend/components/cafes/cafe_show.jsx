@@ -1,10 +1,12 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import Ratings from './rating';
 import CafeShowReservation from './cafe_show_reservation';
 import Review from '../review/review';
-import ReviewForm from '../review/review_form';
+import ReviewFormContainer from '../review/review_form_container';
+
+
 
 class CafeShow extends React.Component {
   constructor(props) {
@@ -76,7 +78,7 @@ class CafeShow extends React.Component {
 
     if (!this.props.cafe) return null;
 
-    const {cafe, fetchCafe} = this.props;
+    const {cafe, fetchCafe, currentUser, createReview} = this.props;
 
     const { cost, animal, average_rating, description, number_reviews, phone_number, urls, users } = this.props.cafe;
       
@@ -236,10 +238,10 @@ class CafeShow extends React.Component {
                 <Review reviews={reviews}/>
               </section>
             </section>
-            <ReviewForm />
+            <Route path="/cafes/:id" component={ReviewFormContainer} />
             </div>
         </section>
-        <CafeShowReservation cafe={cafe}  fetchCafe={ fetchCafe }/>
+        <CafeShowReservation cafe={cafe}  fetchCafe={ fetchCafe } createReview={createReview}/>
       </div>
     </div>
     )

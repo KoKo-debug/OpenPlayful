@@ -1,59 +1,87 @@
 import React from 'react';
+import { merge } from 'lodash';
 
 
 class ReviewForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+          rating: 0,
+          overall: 0,
+          food: 0,
+          service: 0,
+          ambience: 0,
+          value: 0,
+          body: ""
 
+        }
 
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
+    update(field) {
+      return e => {
+        this.setState({[field]: e.target.value})
+      }
+    }
+
 
     handleSubmit(e) {
         e.preventDefault();
-
-
+        const { currentUser, cafe } = this.props;
+        debugger;
+        const review = merge({},this.state, {
+          user_id: this.props.currentUser.id,
+          cafe_id: this.props.cafe.id,
+        })
+        
+      return this.props.createReview(review)
     }
 
 
     render() {
-
-
+      const { currentUser } = this.props;
         return(
             <div className="review-form-container">
 
-                <form onSubmit={this.handleSubmt} className="review-form-box">
+                <form onSubmit={this.handleSubmit} className="review-form-box">
                     <section className="review-form-header">
 
                     </section>
                     <section className="review-form-main">
                         <span>
-                            Rate your dining experience
+                            Hi, rate your dining experience
+                        </span>
+
+                        <span>
+                          <div>
+                            Rating
+                          </div>
+                          <span className="radio-inputs">
+                            <select id="review-dropdown" defaultValue="" onChange={this.update("rating")}>
+                              <option value={1} key={1}>1</option>
+                              <option value={2} key={2}>2</option>
+                              <option value={3} key={3}>3</option>
+                              <option value={5} key={4}>4</option>
+                              <option value={5} key={5}>5</option>
+                            </select>
+                          </span>
                         </span>
 
                         <span>
                             <div>
                                 Overall
                             </div>
-                            <span>
-                                <div className="star">
-                                    <img className="O-ss1" src={window.singleStar} alt="single star"/>
-                                </div>
-                                <div className="star">
-                                    <img className="O-ss2" src={window.singleStar} alt="single star"/>
-                                </div>
-                                <div className="star">
-                                    <img className="O-ss3" src={window.singleStar} alt="single star"/>
-                                </div>
-                                <div className="star">
-                                    <img className="O-ss4" src={window.singleStar} alt="single star"/>
-                                </div>
-                                <div className="star">
-                                    <img className="O-ss5" src={window.singleStar} alt="single star"/>
-                                </div>
+                            <span className="radio-inputs">
+                                <select id="review-dropdown" defaultValue="" onChange={this.update("overall")}>
+                                  <option value={1} key={1}>1</option>
+                                  <option value={2} key={2}>2</option>
+                                  <option value={3} key={3}>3</option>
+                                  <option value={5} key={4}>4</option>
+                                  <option value={5} key={5}>5</option>
+                                </select>
                             </span>
                         </span>
 
@@ -61,22 +89,14 @@ class ReviewForm extends React.Component {
                             <div>
                                 Food
                             </div>
-                            <span>
-                                <div>
-                                    <img className="F-ss1" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="F-ss2" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="F-ss3" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="F-ss4" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="F-ss5" src={window.singleStar} alt="single star" />
-                                </div>
+                            <span className="radio-inputs">
+                              <select id="review-dropdown" defaultValue="" onChange={this.update("food")}>
+                                <option value={1} key={1}>1</option>
+                                <option value={2} key={2}>2</option>
+                                <option value={3} key={3}>3</option>
+                                <option value={5} key={4}>4</option>
+                                <option value={5} key={5}>5</option>
+                              </select>
                             </span>
                         </span>
 
@@ -84,22 +104,14 @@ class ReviewForm extends React.Component {
                             <div>
                                 Service
                             </div>
-                            <span>
-                                <div>
-                                    <img className="O-ss1" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="O-ss2" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="O-ss3" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="O-ss4" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="O-ss5" src={window.singleStar} alt="single star" />
-                                </div>
+                            <span className="radio-inputs">
+                              <select id="review-dropdown" defaultValue="" onChange={this.update("service")}>
+                                <option value={1} key={1}>1</option>
+                                <option value={2} key={2}>2</option>
+                                <option value={3} key={3}>3</option>
+                                <option value={5} key={4}>4</option>
+                                <option value={5} key={5}>5</option>
+                              </select>
                             </span>
                         </span>
 
@@ -107,22 +119,14 @@ class ReviewForm extends React.Component {
                             <div>
                                 Ambience
                             </div>
-                            <span>
-                                <div>
-                                    <img className="A-ss1" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="A-ss2" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="A-ss3" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="A-ss4" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="A-ss5" src={window.singleStar} alt="single star" />
-                                </div>
+                            <span className="radio-inputs"> 
+                              <select id="review-dropdown" defaultValue="" onChange={this.update("ambience")}>
+                                <option value={1} key={1}>1</option>
+                                <option value={2} key={2}>2</option>
+                                <option value={3} key={3}>3</option>
+                                <option value={5} key={4}>4</option>
+                                <option value={5} key={5}>5</option>
+                              </select>
                             </span>
                         </span>
 
@@ -130,26 +134,26 @@ class ReviewForm extends React.Component {
                             <div>
                                 Value
                             </div>
-                            <span>
-                                <div>
-                                    <img className="V-ss1" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="V-ss2" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="V-ss3" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="V-ss4" src={window.singleStar} alt="single star" />
-                                </div>
-                                <div>
-                                    <img className="V-ss5" src={window.singleStar} alt="single star" />
-                                </div>
+                            <span className="radio-inputs">
+                              <select id="review-dropdown" defaultValue="" onChange={this.update("value")}>
+                                <option value={1} key={1}>1</option>
+                                <option value={2} key={2}>2</option>
+                                <option value={3} key={3}>3</option>
+                                <option value={5} key={4}>4</option>
+                                <option value={5} key={5}>5</option>
+                              </select>
                             </span>
                         </span>
 
-                        <button>Next</button>
+                        <span>
+                          <textarea
+                            placeholder="please leave a description"
+                            value={this.state.body}
+                            onChange={this.update("body")}
+                          />
+                        </span>
+
+                        <button>Submit review</button>
 
                     </section>
                 </form>
